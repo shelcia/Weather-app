@@ -29,31 +29,38 @@ const App = () => {
     setQuery(search);
   };
   return (
-    <div className="App">
-      <div className="col-sm-4 mx-auto border">
-        <form className="form-inline " onSubmit={getSearch}>
-          <input
-            className="form-control"
-            type="search"
-            value={search}
-            onChange={updateState}
-          />
-          <button className="btn btn-primary" type="submit">
-            Search
-          </button>
-        </form>
-      </div>
+    <div>
+      <div className="container">
+        <div className="form">
+          <form className="search" onSubmit={getSearch}>
+            <input
+              className="form-control"
+              type="search"
+              value={search}
+              onChange={updateState}
+            />
+            <button className="button" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
 
-      <br></br>
-      {countries.map(country => (
-        <Country
-          key={country.alpha2Code}
-          name={country.name}
-          population={country.population}
-          region={country.region}
-          flag={country.flag}
-        />
-      ))}
+        <br></br>
+        <br></br>
+        <br></br>
+        <div className="grid">
+          {countries.map(country => (
+            <Country
+              key={country.alpha2Code}
+              name={country.name}
+              population={country.population}
+              region={country.region}
+              flag={country.flag}
+            />
+          ))}
+        </div>
+      </div>
+      <footer>©copyrights shelcia 2020</footer>
     </div>
   );
 };
