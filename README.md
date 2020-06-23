@@ -1,5 +1,5 @@
 # countries
-React app using countries API
+React app using countries API(https://restcountries.eu/)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
