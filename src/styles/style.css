@@ -1,0 +1,262 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: -webkit-gradient(linear, left top, right top, from(#212121), to(#484848));
+  background: linear-gradient(to Right, #212121, #484848);
+  font-family: "Poppins", sans-serif;
+}
+
+nav {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+nav form {
+  background-color: #212121;
+  margin: auto;
+  width: 100%;
+  padding: 30px;
+  opacity: 0.7;
+}
+
+nav form input[type="search"] {
+  padding: 0.75rem;
+  width: 35%;
+  border-radius: 0.25rem;
+  border: none;
+  opacity: 1;
+}
+
+nav form input[type="search"]:focus {
+  outline: none;
+}
+
+nav form button[type="submit"] {
+  background: -webkit-gradient(linear, left top, right top, from(#ff1158), to(#ff3e78));
+  background: linear-gradient(to Right, #ff1158, #ff3e78);
+  padding: 0.75rem;
+  cursor: pointer;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  border-radius: 0.25rem;
+}
+
+nav form button[type="submit"]:hover {
+  opacity: 0.5;
+}
+
+nav form button[type="submit"]:focus {
+  outline: none;
+}
+
+.container {
+  text-align: center;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 95%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  margin: auto;
+  margin-top: 2vh;
+}
+
+.container .grid {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 20px;
+  -ms-grid-columns: 330px 330px 330px;
+      grid-template-columns: 330px 330px 330px;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  position: relative;
+}
+
+.container .grid div {
+  padding: 1rem;
+  background: -webkit-gradient(linear, left top, right top, from(#484848), to(#212121));
+  background: linear-gradient(to Right, #484848, #212121);
+  border-radius: 25px;
+  position: relative;
+  -webkit-box-shadow: 2px 2px 6px #00000029;
+          box-shadow: 2px 2px 6px #00000029;
+}
+
+.container .grid div button {
+  margin-top: 1vh;
+  background: -webkit-gradient(linear, left top, right top, from(#ff1158), to(#ff3e78));
+  background: linear-gradient(to Right, #ff1158, #ff3e78);
+  padding: 0.37rem 0.75rem;
+  cursor: pointer;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  border-radius: 0.25rem;
+}
+
+.container .grid div button:hover {
+  opacity: 0.5;
+}
+
+.container .grid div button:focus {
+  outline: none;
+}
+
+.container .grid div h1 {
+  font-size: 1.5rem;
+  padding: 0.2rem 0rem;
+}
+
+.container .grid div p {
+  font-size: 1.1rem;
+  padding: 0.2rem 0rem;
+}
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  width: 70%;
+  padding: 1rem;
+  background: -webkit-gradient(linear, left top, right top, from(#484848), to(#212121));
+  background: linear-gradient(to Right, #484848, #212121);
+  border-radius: 25px;
+  -webkit-box-shadow: 2px 2px 6px #00000029;
+          box-shadow: 2px 2px 6px #00000029;
+  left: 15%;
+  top: 20%;
+  height: 300px;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  overflow-y: scroll;
+}
+
+.modal table {
+  width: 100%;
+  color: white;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.modal table tbody {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.modal table tbody tr {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.modal button {
+  margin-top: 1vh;
+  background: -webkit-gradient(linear, left top, right top, from(#ff1158), to(#ff3e78));
+  background: linear-gradient(to Right, #ff1158, #ff3e78);
+  padding: 0.37rem 0.75rem;
+  cursor: pointer;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  border-radius: 0.25rem;
+}
+
+.modal button:hover {
+  opacity: 0.5;
+}
+
+.modal button:focus {
+  outline: none;
+}
+
+.display-block {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.433);
+}
+
+.display-none {
+  display: none;
+}
+
+@media screen and (max-width: 780px) {
+  .container .grid {
+    -ms-grid-columns: 49% 49%;
+        grid-template-columns: 49% 49%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container .grid {
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+    grid-gap: 0px;
+  }
+}
+
+.page-container {
+  margin: 5vh auto;
+  width: 100%;
+  overflow: auto;
+  text-align: center;
+}
+
+.page-container .pagination {
+  margin: 5vh auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style: none;
+  outline: none;
+}
+
+.page-container .pagination li a {
+  font-size: 0.8rem;
+  border: 1px solid #ff3e78;
+  padding: 0.5rem;
+  outline: none;
+  cursor: pointer;
+  color: #ff3e78;
+  text-decoration: none;
+}
+
+.page-container .pagination li a:hover {
+  background-color: #ff3e78;
+  color: white;
+}
+
+.page-container .pagination li .active {
+  background-color: #ff3e78;
+  color: white;
+}
+
+.page-container .pagination li .disabled {
+  display: none;
+}
+/*# sourceMappingURL=style.css.map */
