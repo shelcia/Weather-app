@@ -1,4 +1,5 @@
 $base: #ff3e78;
+$transistion: all 0.3s ease-in;
 * {
   margin: 0;
   padding: 0;
@@ -78,6 +79,7 @@ nav {
         border: none;
         font-family: "Poppins", sans-serif;
         border-radius: 0.25rem;
+        transition: $transistion;
         &:hover {
           opacity: 0.5;
         }
@@ -112,33 +114,40 @@ nav {
   table {
     width: 100%;
     color: white;
-    border: 1px solid black;
-    border-collapse: collapse;
     tbody {
-      border: 1px solid black;
-      border-collapse: collapse;
       tr {
-        border: 1px solid black;
-        border-collapse: collapse;
+        th {
+          text-align: right;
+          padding-right: 2rem;
+        }
       }
     }
   }
-  button {
-    margin-top: 1vh;
-    background: linear-gradient(to Right, #ff1158, #ff3e78);
-    padding: 0.37rem 0.75rem;
-    cursor: pointer;
-    border: none;
-    font-family: "Poppins", sans-serif;
-    border-radius: 0.25rem;
-    &:hover {
-      opacity: 0.5;
-    }
-    &:focus {
-      outline: none;
+  .button-container {
+    margin-top: 3vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    button {
+      background: linear-gradient(to Right, #ff1158, #ff3e78);
+      padding: 0.37rem 0.75rem;
+      cursor: pointer;
+      border: none;
+      font-family: "Poppins", sans-serif;
+      border-radius: 0.25rem;
+      transition: $transistion;
+
+      &:hover {
+        opacity: 0.5;
+      }
+      &:focus {
+        outline: none;
+      }
     }
   }
 }
+
 .display-block {
   display: block;
   background-color: rgba(0, 0, 0, 0.433);
@@ -148,7 +157,7 @@ nav {
 }
 @media screen and (max-width: 780px) {
   .container .grid {
-    grid-template-columns: 49% 49%;
+    grid-template-columns: 330px 330px;
   }
 }
 @media screen and (max-width: 500px) {
@@ -162,15 +171,20 @@ nav {
   width: 100%;
   overflow: auto;
   text-align: center;
+  overflow-x: scroll;
+  // padding: 10px 0px;
 
   .pagination {
     margin: 5vh auto;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     list-style: none;
     outline: none;
+
     li {
+      padding: 10px 0px;
       a {
         font-size: 0.8rem;
         border: 1px solid $base;
@@ -179,6 +193,8 @@ nav {
         cursor: pointer;
         color: $base;
         text-decoration: none;
+        transition: $transistion;
+
         &:hover {
           background-color: $base;
           color: white;
