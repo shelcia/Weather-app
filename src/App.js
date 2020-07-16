@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./styles/style.css";
 import Country from "./components/Countries";
-import Modal from "./components/Modal";
+// import Modal from "./components/Modal";
 import Pagination from "./components/Pagination";
 
 const App = () => {
@@ -38,6 +38,38 @@ const App = () => {
           await fetch("https://restcountries.eu/rest/v2/name/" + query)
         ).json();
         console.log(response);
+        if (response.status === 404) {
+          console.log("in if");
+          response = await (
+            await fetch(" https://restcountries.eu/rest/v2/capital/" + query)
+          ).json();
+          console.log(response);
+          if (response.status === 404) {
+            console.log("in if");
+            response = await (
+              await fetch(" https://restcountries.eu/rest/v2/lang/" + query)
+            ).json();
+            console.log(response);
+          }
+
+          if (response.status === 404) {
+            console.log("in if");
+            response = await (
+              await fetch(
+                " https://restcountries.eu/rest/v2/callingcode/" + query
+              )
+            ).json();
+            console.log(response);
+          }
+
+          if (response.status === 404) {
+            console.log("in if");
+            response = await (
+              await fetch(" https://restcountries.eu/rest/v2/region/" + query)
+            ).json();
+            console.log(response);
+          }
+        }
       }
       const data = await response;
       setCountries(data);
@@ -92,11 +124,19 @@ const App = () => {
               population={country.population}
               region={country.region}
               flag={country.flag}
+              show={state}
+              hideModal={hideModal}
+              alpha2Code={country.alpha2Code}
+              capital={country.capital}
+              area={country.area}
+              nativeName={country.nativeName}
+              cioc={country.cioc}
+              subregion={country.subregion}
             />
           ))}
         </div>
       </div>
-      <div class="page-container">
+      <div className="page-container">
         <Pagination
           perPage={perPage}
           totalPosts={countries.length}
@@ -105,7 +145,7 @@ const App = () => {
           changePage={changePage}
         />
       </div>
-      {countries.map((country) => (
+      {/* {countries.map((country) => (
         <Modal
           show={state}
           hideModal={hideModal}
@@ -117,7 +157,7 @@ const App = () => {
           cioc={country.cioc}
           subregion={country.subregion}
         />
-      ))}
+      ))} */}
     </React.Fragment>
   );
 };
