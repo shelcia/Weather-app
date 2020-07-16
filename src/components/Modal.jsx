@@ -17,7 +17,7 @@ const Modal = ({
       <table>
         <tbody>
           <tr>
-            <td>Alpha2Code:</td>
+            <th>Alpha2Code:</th>
             <td>{alpha2Code}</td>
           </tr>
           <tr>
@@ -42,11 +42,12 @@ const Modal = ({
           </tr>
         </tbody>
       </table>
-      <button className="btn btn-primary mt-3" onClick={hideModal}>
-        Close
-      </button>
+      <div className="button-container">
+        <button onClick={hideModal}>Close</button>
+      </div>
     </div>
   );
 };
 
 export default Modal;
+
