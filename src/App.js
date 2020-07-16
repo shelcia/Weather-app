@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./styles/style.css";
 import Country from "./components/Countries";
-// import Modal from "./components/Modal";
+import Modal from "./components/Modal";
 import Pagination from "./components/Pagination";
 
 const App = () => {
@@ -11,6 +11,7 @@ const App = () => {
   const [state, setState] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [perPage] = useState(9);
+  const [modalProps, setModalProps] = useState([]);
 
   useEffect(() => {
     getCountry();
@@ -18,8 +19,24 @@ const App = () => {
   }, [query]);
 
   //Methods for Modal display
-  const showModal = () => {
+  const showModal = (
+    alpha2Code,
+    capital,
+    area,
+    nativeName,
+    cioc,
+    subregion
+  ) => {
     setState(true);
+    console.log(alpha2Code);
+    setModalProps({
+      alpha2Code: alpha2Code,
+      capital: capital,
+      area: area,
+      nativeName: nativeName,
+      cioc: cioc,
+      subregion: subregion,
+    });
   };
   const hideModal = () => {
     setState(false);
@@ -145,19 +162,17 @@ const App = () => {
           changePage={changePage}
         />
       </div>
-      {/* {countries.map((country) => (
-        <Modal
-          show={state}
-          hideModal={hideModal}
-          key={country.alpha2Code}
-          alpha2Code={country.alpha2Code}
-          capital={country.capital}
-          area={country.area}
-          nativeName={country.nativeName}
-          cioc={country.cioc}
-          subregion={country.subregion}
-        />
-      ))} */}
+      <Modal
+        show={state}
+        hideModal={hideModal}
+        key={modalProps.alpha2Code}
+        alpha2Code={modalProps.alpha2Code}
+        capital={modalProps.capital}
+        area={modalProps.area}
+        nativeName={modalProps.nativeName}
+        cioc={modalProps.cioc}
+        subregion={modalProps.subregion}
+      />
     </React.Fragment>
   );
 };
