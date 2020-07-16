@@ -22,7 +22,7 @@ const Pagination = ({
   return (
     <div className="pagination">
       <li>
-        <a className={disabled(0)} onClick={() => changePage(0)}>
+        <a className={disabled(0)} onClick={() => changePage(0)} href="!#">
           Prev
         </a>
       </li>
