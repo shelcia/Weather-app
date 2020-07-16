@@ -1,6 +1,18 @@
 import React from "react";
 
-const Country = ({ name, population, region, flag, showModal }) => {
+const Country = ({
+  name,
+  population,
+  region,
+  flag,
+  showModal,
+  alpha2Code,
+  capital,
+  area,
+  nativeName,
+  cioc,
+  subregion,
+}) => {
   return (
     <div>
       <img src={flag} alt="" width="100px" height="auto"></img>
@@ -11,8 +23,7 @@ const Country = ({ name, population, region, flag, showModal }) => {
         type="button"
         onClick={(e) => {
           e.preventDefault();
-          showModal();
-          console.log("clicked");
+          showModal(alpha2Code, capital, area, nativeName, cioc, subregion);
         }}
       >
         Know More
