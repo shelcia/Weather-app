@@ -116,6 +116,8 @@ nav form button[type="submit"]:focus {
   border: none;
   font-family: "Poppins", sans-serif;
   border-radius: 0.25rem;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
 }
 
 .container .grid div button:hover {
@@ -157,22 +159,28 @@ nav form button[type="submit"]:focus {
 .modal table {
   width: 100%;
   color: white;
-  border: 1px solid black;
-  border-collapse: collapse;
 }
 
-.modal table tbody {
-  border: 1px solid black;
-  border-collapse: collapse;
+.modal table tbody tr th {
+  text-align: right;
+  padding-right: 2rem;
 }
 
-.modal table tbody tr {
-  border: 1px solid black;
-  border-collapse: collapse;
+.modal .button-container {
+  margin-top: 3vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
 }
 
-.modal button {
-  margin-top: 1vh;
+.modal .button-container button {
   background: -webkit-gradient(linear, left top, right top, from(#ff1158), to(#ff3e78));
   background: linear-gradient(to Right, #ff1158, #ff3e78);
   padding: 0.37rem 0.75rem;
@@ -180,13 +188,15 @@ nav form button[type="submit"]:focus {
   border: none;
   font-family: "Poppins", sans-serif;
   border-radius: 0.25rem;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
 }
 
-.modal button:hover {
+.modal .button-container button:hover {
   opacity: 0.5;
 }
 
-.modal button:focus {
+.modal .button-container button:focus {
   outline: none;
 }
 
@@ -201,8 +211,8 @@ nav form button[type="submit"]:focus {
 
 @media screen and (max-width: 780px) {
   .container .grid {
-    -ms-grid-columns: 49% 49%;
-        grid-template-columns: 49% 49%;
+    -ms-grid-columns: 330px 330px;
+        grid-template-columns: 330px 330px;
   }
 }
 
@@ -219,6 +229,7 @@ nav form button[type="submit"]:focus {
   width: 100%;
   overflow: auto;
   text-align: center;
+  overflow-x: scroll;
 }
 
 .page-container .pagination {
@@ -226,6 +237,8 @@ nav form button[type="submit"]:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -236,6 +249,10 @@ nav form button[type="submit"]:focus {
   outline: none;
 }
 
+.page-container .pagination li {
+  padding: 10px 0px;
+}
+
 .page-container .pagination li a {
   font-size: 0.8rem;
   border: 1px solid #ff3e78;
@@ -244,6 +261,8 @@ nav form button[type="submit"]:focus {
   cursor: pointer;
   color: #ff3e78;
   text-decoration: none;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
 }
 
 .page-container .pagination li a:hover {
