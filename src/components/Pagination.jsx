@@ -20,9 +20,9 @@ const Pagination = ({
       return "disabled";
   };
   return (
-    <div class="pagination">
+    <div className="pagination">
       <li>
-        <a className={disabled(0)} onClick={() => changePage(0)} href="!#">
+        <a className={disabled(0)} onClick={() => changePage(0)}>
           Prev
         </a>
       </li>
