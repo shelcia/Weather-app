@@ -1,53 +1,30 @@
 import React from "react";
 
-const Modal = ({
-  hideModal,
-  show,
-  alpha2Code,
-  capital,
-  area,
-  nativeName,
-  cioc,
-  subregion,
-}) => {
-  const showHideClassName = show ? "modal display-block" : "modal display-none";
-
+const Modal = ({ alpha2Code, children }) => {
   return (
-    <div className={showHideClassName}>
-      <table>
-        <tbody>
-          <tr>
-            <th>Alpha2Code:</th>
-            <td>{alpha2Code}</td>
-          </tr>
-          <tr>
-            <th>Capital: </th>
-            <td>{capital}</td>
-          </tr>
-          <tr>
-            <th>Area: </th>
-            <td>{area}</td>
-          </tr>
-          <tr>
-            <th>Native Name: </th>
-            <td>{nativeName}</td>
-          </tr>
-          <tr>
-            <th>Cioc: </th>
-            <td>{cioc}</td>
-          </tr>
-          <tr>
-            <th>Subregion: </th>
-            <td>{subregion}</td>
-          </tr>
-        </tbody>
-      </table>
-      <div className="button-container">
-        <button onClick={hideModal}>Close</button>
+    <div className="modal fade" id={`modal${alpha2Code}`}>
+      <div className="modal-dialog">
+        <div className="modal-content">
+          <div className="modal-header">
+            <h4 className="modal-title">Modal Heading</h4>
+            <button type="button" className="close" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div className="modal-body">{children}</div>
+          <div className="modal-footer">
+            <button
+              type="button"
+              className="btn btn-danger"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
 export default Modal;
-

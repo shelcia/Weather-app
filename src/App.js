@@ -1,44 +1,25 @@
 import React, { useEffect, useState } from "react";
 import "./styles/style.css";
 import Country from "./components/Countries";
-import Modal from "./components/Modal";
 import Pagination from "./components/Pagination";
 import Navbar from "./components/Navbar";
+import { useSelector, useDispatch } from "react-redux";
+import { LoadCountries } from "./components/actions";
 
 const App = () => {
-  const [countries, setCountries] = useState([]);
+  const countries = useSelector((state) => state.countries);
   const [search, setSearch] = useState("");
   const [query, setQuery] = useState("");
   const [state, setState] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [perPage] = useState(9);
-  const [modalProps, setModalProps] = useState([]);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     getCountry();
     setCurrentPage(1);
   }, [query]);
 
-  //Methods for Modal display
-  const showModal = (
-    alpha2Code,
-    capital,
-    area,
-    nativeName,
-    cioc,
-    subregion
-  ) => {
-    setState(true);
-    console.log(alpha2Code);
-    setModalProps({
-      alpha2Code: alpha2Code,
-      capital: capital,
-      area: area,
-      nativeName: nativeName,
-      cioc: cioc,
-      subregion: subregion,
-    });
-  };
   const hideModal = () => {
     setState(false);
   };
@@ -79,7 +60,6 @@ const App = () => {
             ).json();
             console.log(response);
           }
-
           if (response.status === 404) {
             console.log("in if");
             response = await (
@@ -90,10 +70,10 @@ const App = () => {
         }
       }
       const data = await response;
-      setCountries(data);
+      dispatch(LoadCountries(data));
     } catch (error) {
       console.log(error);
-      setCountries([{ name: "Page not found" }]);
+      LoadCountries([{ name: "Page not found" }]);
     }
   };
   const updateState = (e) => {
@@ -109,10 +89,11 @@ const App = () => {
   // Pagination variables
   const indexOfLastCountry = currentPage * perPage;
   const indexOfFirstCountry = indexOfLastCountry - perPage;
-  const currentCountries = countries.slice(
-    indexOfFirstCountry,
-    indexOfLastCountry
-  );
+  let currentCountries;
+  console.log(countries.length);
+
+  currentCountries = countries.slice(indexOfFirstCountry, indexOfLastCountry);
+
   //Pagination method
   const Paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
@@ -126,44 +107,11 @@ const App = () => {
   };
   return (
     <React.Fragment>
-      {/* <nav>
-        <form onSubmit={getSearch}>
-          <input type="search" value={search} onChange={updateState} />
-          <button type="submit">Search</button>
-        </form>
-      </nav> */}
-      {/* <nav className="navbar navbar-expand-sm bg-dark navbar-dark fixed-top mb-5">
-        <ul className="navbar-nav">
-          <li className="nav-item">
-            <a className="nav-link" href="/">
-              Countries
-            </a>
-          </li>
-        </ul>
-
-        <form className="form-inline">
-          <input
-            className="form-control mr-sm-2"
-            type="text"
-            placeholder="Search"
-            value={search}
-            onChange={(event) => updateState(event)}
-          />
-          <button
-            className="btn btn-success"
-            type="submit"
-            onClick={() => getSearch()}
-          >
-            Search
-          </button>
-        </form>
-      </nav> */}
       <Navbar />
       <div className="container border">
         <div className="row">
           {currentCountries.map((country) => (
             <Country
-              showModal={showModal}
               key={country.alpha2Code}
               name={country.name}
               population={country.population}
@@ -190,17 +138,6 @@ const App = () => {
           changePage={changePage}
         />
       </div>
-      <Modal
-        show={state}
-        hideModal={hideModal}
-        key={modalProps.alpha2Code}
-        alpha2Code={modalProps.alpha2Code}
-        capital={modalProps.capital}
-        area={modalProps.area}
-        nativeName={modalProps.nativeName}
-        cioc={modalProps.cioc}
-        subregion={modalProps.subregion}
-      />
     </React.Fragment>
   );
 };
