@@ -125,14 +125,32 @@ const App = () => {
   };
   return (
     <React.Fragment>
-      <nav>
+      {/* <nav>
         <form onSubmit={getSearch}>
           <input type="search" value={search} onChange={updateState} />
           <button type="submit">Search</button>
         </form>
+      </nav> */}
+      <nav className="navbar navbar-expand-sm bg-dark navbar-dark fixed-top mb-5">
+        <form className="form-inline" action="/action_page.php">
+          <input
+            className="form-control mr-sm-2"
+            type="text"
+            placeholder="Search"
+            value={search}
+            onChange={updateState}
+          />
+          <button
+            className="btn btn-success"
+            type="submit"
+            onClick={() => getSearch}
+          >
+            Search
+          </button>
+        </form>
       </nav>
-      <div className="container">
-        <div className="grid">
+      <div className="container mt-5 border">
+        <div className="card-deck">
           {currentCountries.map((country) => (
             <Country
               showModal={showModal}

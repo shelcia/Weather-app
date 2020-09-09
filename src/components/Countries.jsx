@@ -14,7 +14,7 @@ const Country = ({
   subregion,
 }) => {
   return (
-    <div>
+    <div className="card">
       <img src={flag} alt="" width="100px" height="auto"></img>
       <h1>{name}</h1>
       <p>{population}</p>

@@ -4,168 +4,169 @@ $transistion: all 0.3s ease-in;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-body {
-  background: linear-gradient(to Right, #212121, #484848);
   font-family: "Poppins", sans-serif;
 }
-nav {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  form {
-    background-color: #212121;
-    margin: auto;
-    width: 100%;
-    padding: 30px;
-    opacity: 0.7;
-    input[type="search"] {
-      padding: 0.75rem;
-      width: 35%;
-      border-radius: 0.25rem;
-      border: none;
-      opacity: 1;
-      &:focus {
-        outline: none;
-      }
-    }
-    button[type="submit"] {
-      background: linear-gradient(to Right, #ff1158, #ff3e78);
-      padding: 0.75rem;
-      cursor: pointer;
-      border: none;
-      font-family: "Poppins", sans-serif;
-      border-radius: 0.25rem;
-      &:hover {
-        opacity: 0.5;
-      }
-      &:focus {
-        outline: none;
-      }
-    }
-  }
-}
-.container {
-  text-align: center;
-  min-height: 100vh;
-  display: flex;
-  width: 95%;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  margin: auto;
-  margin-top: 2vh;
-  .grid {
-    display: grid;
-    grid-gap: 20px;
-    grid-template-columns: 330px 330px 330px;
-    grid-template-rows: auto;
-    position: relative;
-    div {
-      padding: 1rem;
-      background: linear-gradient(to Right, #484848, #212121);
-      border-radius: 25px;
-      position: relative;
-      box-shadow: 2px 2px 6px #00000029;
-      button {
-        margin-top: 1vh;
-        background: linear-gradient(to Right, #ff1158, #ff3e78);
-        padding: 0.37rem 0.75rem;
-        cursor: pointer;
-        border: none;
-        font-family: "Poppins", sans-serif;
-        border-radius: 0.25rem;
-        transition: $transistion;
-        &:hover {
-          opacity: 0.5;
-        }
-        &:focus {
-          outline: none;
-        }
-      }
-      h1 {
-        font-size: 1.5rem;
-        padding: 0.2rem 0rem;
-      }
-      p {
-        font-size: 1.1rem;
-        padding: 0.2rem 0rem;
-      }
-    }
-  }
-}
-.modal {
-  position: fixed;
-  z-index: 1;
-  width: 70%;
-  padding: 1rem;
-  background: linear-gradient(to Right, #484848, #212121);
-  border-radius: 25px;
-  box-shadow: 2px 2px 6px #00000029;
-  left: 15%;
-  top: 20%;
-  height: 300px;
-  transition: all 0.3s ease-out;
-  overflow-y: scroll;
-  table {
-    width: 100%;
-    color: white;
-    tbody {
-      tr {
-        th {
-          text-align: right;
-          padding-right: 2rem;
-        }
-      }
-    }
-  }
-  .button-container {
-    margin-top: 3vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    button {
-      background: linear-gradient(to Right, #ff1158, #ff3e78);
-      padding: 0.37rem 0.75rem;
-      cursor: pointer;
-      border: none;
-      font-family: "Poppins", sans-serif;
-      border-radius: 0.25rem;
-      transition: $transistion;
+// body {
+//   background: linear-gradient(to Right, #212121, #484848);
+// }
+// nav {
+//   width: 100%;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   text-align: center;
+//   form {
+//     background-color: #212121;
+//     margin: auto;
+//     width: 100%;
+//     padding: 30px;
+//     opacity: 0.7;
+//     input[type="search"] {
+//       padding: 0.75rem;
+//       width: 35%;
+//       border-radius: 0.25rem;
+//       border: none;
+//       opacity: 1;
+//       background-color: white;
+//       &:focus {
+//         outline: none;
+//       }
+//     }
+//     button[type="submit"] {
+//       background: linear-gradient(to Right, #ff1158, #ff3e78);
+//       padding: 0.75rem;
+//       cursor: pointer;
+//       border: none;
+//       font-family: "Poppins", sans-serif;
+//       border-radius: 0.25rem;
+//       &:hover {
+//         opacity: 0.5;
+//       }
+//       &:focus {
+//         outline: none;
+//       }
+//     }
+//   }
+// }
+// .container {
+//   text-align: center;
+//   min-height: 100vh;
+//   display: flex;
+//   width: 95%;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   font-size: calc(10px + 2vmin);
+//   color: white;
+//   margin: auto;
+//   margin-top: 2vh;
+//   .grid {
+//     display: grid;
+//     grid-gap: 20px;
+//     grid-template-columns: 330px 330px 330px;
+//     grid-template-rows: auto;
+//     position: relative;
+//     div {
+//       padding: 1rem;
+//       background: linear-gradient(to Right, #484848, #212121);
+//       border-radius: 25px;
+//       position: relative;
+//       box-shadow: 2px 2px 6px #00000029;
+//       button {
+//         margin-top: 1vh;
+//         background: linear-gradient(to Right, #ff1158, #ff3e78);
+//         padding: 0.37rem 0.75rem;
+//         cursor: pointer;
+//         border: none;
+//         font-family: "Poppins", sans-serif;
+//         border-radius: 0.25rem;
+//         transition: $transistion;
+//         &:hover {
+//           opacity: 0.5;
+//         }
+//         &:focus {
+//           outline: none;
+//         }
+//       }
+//       h1 {
+//         font-size: 1.5rem;
+//         padding: 0.2rem 0rem;
+//       }
+//       p {
+//         font-size: 1.1rem;
+//         padding: 0.2rem 0rem;
+//       }
+//     }
+//   }
+// }
+// .modal {
+//   position: fixed;
+//   z-index: 1;
+//   width: 70%;
+//   padding: 1rem;
+//   background: linear-gradient(to Right, #484848, #212121);
+//   border-radius: 25px;
+//   box-shadow: 2px 2px 6px #00000029;
+//   left: 15%;
+//   top: 20%;
+//   height: 300px;
+//   transition: all 0.3s ease-out;
+//   overflow-y: scroll;
+//   table {
+//     width: 100%;
+//     color: white;
+//     tbody {
+//       tr {
+//         th {
+//           text-align: right;
+//           padding-right: 2rem;
+//         }
+//       }
+//     }
+//   }
+//   .button-container {
+//     margin-top: 3vh;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     width: 100%;
+//     button {
+//       background: linear-gradient(to Right, #ff1158, #ff3e78);
+//       padding: 0.37rem 0.75rem;
+//       cursor: pointer;
+//       border: none;
+//       font-family: "Poppins", sans-serif;
+//       border-radius: 0.25rem;
+//       transition: $transistion;
 
-      &:hover {
-        opacity: 0.5;
-      }
-      &:focus {
-        outline: none;
-      }
-    }
-  }
-}
+//       &:hover {
+//         opacity: 0.5;
+//       }
+//       &:focus {
+//         outline: none;
+//       }
+//     }
+//   }
+// }
 
-.display-block {
-  display: block;
-  background-color: rgba(0, 0, 0, 0.433);
-}
-.display-none {
-  display: none;
-}
-@media screen and (max-width: 780px) {
-  .container .grid {
-    grid-template-columns: 330px 330px;
-  }
-}
-@media screen and (max-width: 500px) {
-  .container .grid {
-    grid-template-columns: 100%;
-    grid-gap: 0px;
-  }
-}
+// .display-block {
+//   display: block;
+//   background-color: rgba(0, 0, 0, 0.433);
+// }
+// .display-none {
+//   display: none;
+// }
+// @media screen and (max-width: 780px) {
+//   .container .grid {
+//     grid-template-columns: 330px 330px;
+//   }
+// }
+// @media screen and (max-width: 500px) {
+//   .container .grid {
+//     grid-template-columns: 100%;
+//     grid-gap: 0px;
+//   }
+// }
 .page-container {
   margin: 5vh auto;
   width: 100%;
