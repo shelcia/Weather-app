@@ -3,6 +3,7 @@ import "./styles/style.css";
 import Country from "./components/Countries";
 import Modal from "./components/Modal";
 import Pagination from "./components/Pagination";
+import Navbar from "./components/Navbar";
 
 const App = () => {
   const [countries, setCountries] = useState([]);
@@ -131,26 +132,35 @@ const App = () => {
           <button type="submit">Search</button>
         </form>
       </nav> */}
-      <nav className="navbar navbar-expand-sm bg-dark navbar-dark fixed-top mb-5">
-        <form className="form-inline" action="/action_page.php">
+      {/* <nav className="navbar navbar-expand-sm bg-dark navbar-dark fixed-top mb-5">
+        <ul className="navbar-nav">
+          <li className="nav-item">
+            <a className="nav-link" href="/">
+              Countries
+            </a>
+          </li>
+        </ul>
+
+        <form className="form-inline">
           <input
             className="form-control mr-sm-2"
             type="text"
             placeholder="Search"
             value={search}
-            onChange={updateState}
+            onChange={(event) => updateState(event)}
           />
           <button
             className="btn btn-success"
             type="submit"
-            onClick={() => getSearch}
+            onClick={() => getSearch()}
           >
             Search
           </button>
         </form>
-      </nav>
-      <div className="container mt-5 border">
-        <div className="card-deck">
+      </nav> */}
+      <Navbar />
+      <div className="container border">
+        <div className="row">
           {currentCountries.map((country) => (
             <Country
               showModal={showModal}

@@ -14,9 +14,9 @@ const Country = ({
   subregion,
 }) => {
   return (
-    <div className="card">
-      <img src={flag} alt="" width="100px" height="auto"></img>
-      <h1>{name}</h1>
+    <div className="card bg-dark mb-4 text-center">
+      <img src={flag} alt="" width="100px" height="auto" className="mb-2"></img>
+      <h5>{name}</h5>
       <p>{population}</p>
       <p>{region}</p>
       <button
@@ -25,6 +25,7 @@ const Country = ({
           e.preventDefault();
           showModal(alpha2Code, capital, area, nativeName, cioc, subregion);
         }}
+        className="btn btn-info"
       >
         Know More
       </button>

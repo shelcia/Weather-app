@@ -6,6 +6,40 @@
   font-family: "Poppins", sans-serif;
 }
 
+body {
+  background-color: #282c34 !important;
+}
+
+.container {
+  margin-top: 12vh;
+}
+
+.container .row {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container .row .card {
+  width: 300px !important;
+  height: 250px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+p,
+h5 {
+  color: white;
+}
+
 .page-container {
   margin: 5vh auto;
   width: 100%;

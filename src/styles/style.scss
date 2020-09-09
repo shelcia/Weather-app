@@ -6,9 +6,28 @@ $transistion: all 0.3s ease-in;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-// body {
-//   background: linear-gradient(to Right, #212121, #484848);
-// }
+
+body {
+  background-color: #282c34 !important;
+}
+.container {
+  margin-top: 12vh;
+  .row {
+    flex-wrap: wrap;
+    flex-flow: wrap;
+    justify-content: space-between;
+    .card {
+      width: 300px !important;
+      height: 250px;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+p,
+h5 {
+  color: white;
+}
 // nav {
 //   width: 100%;
 //   display: flex;
