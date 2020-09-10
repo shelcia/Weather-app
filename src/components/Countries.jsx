@@ -1,5 +1,6 @@
 import React from "react";
 import Modal from "./Modal";
+import { useState } from "react";
 
 const Country = ({
   name,
@@ -36,7 +37,7 @@ const Country = ({
           Know More
         </button>
       </div>
-      <Modal alpha2Code={alpha2Code}>
+      <Modal alpha2Code={alpha2Code} capital={capital}>
         {
           <table className="table table-dark table-striped">
             <tbody>

@@ -31,7 +31,7 @@ const Pagination = ({
           <a
             className={active(number)}
             onClick={() => Paginate(number)}
-            href="/"
+            href="#!"
           >
             {number}
           </a>
