@@ -8,81 +8,38 @@ import { LoadCountries } from "./components/actions";
 
 const App = () => {
   const countries = useSelector((state) => state.countries);
-  const [search, setSearch] = useState("");
   const [query, setQuery] = useState("");
-  const [state, setState] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [perPage] = useState(9);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    getCountry();
-    setCurrentPage(1);
-  }, [query]);
-
-  const hideModal = () => {
-    setState(false);
-  };
-  //Get REST API
-  const getCountry = async () => {
-    let response;
-    try {
-      if (query === "") {
-        response = await (
-          await fetch("https://restcountries.eu/rest/v2/all")
-        ).json();
-        console.log(response);
-      } else {
-        response = await (
-          await fetch("https://restcountries.eu/rest/v2/name/" + query)
-        ).json();
-        console.log(response);
-        if (response.status === 404) {
-          console.log("in if");
+    //Get REST API
+    console.log(query);
+    const getCountry = async () => {
+      let response;
+      try {
+        if (query === "") {
           response = await (
-            await fetch(" https://restcountries.eu/rest/v2/capital/" + query)
+            await fetch("https://restcountries.eu/rest/v2/all")
           ).json();
           console.log(response);
-          if (response.status === 404) {
-            console.log("in if");
-            response = await (
-              await fetch(" https://restcountries.eu/rest/v2/lang/" + query)
-            ).json();
-            console.log(response);
-          }
-
-          if (response.status === 404) {
-            console.log("in if");
-            response = await (
-              await fetch(
-                " https://restcountries.eu/rest/v2/callingcode/" + query
-              )
-            ).json();
-            console.log(response);
-          }
-          if (response.status === 404) {
-            console.log("in if");
-            response = await (
-              await fetch(" https://restcountries.eu/rest/v2/region/" + query)
-            ).json();
-            console.log(response);
-          }
+        } else {
+          response = await (
+            await fetch("https://restcountries.eu/rest/v2/name/" + query)
+          ).json();
+          console.log(response);
         }
+        const data = await response;
+        dispatch(LoadCountries(data));
+      } catch (error) {
+        console.log(error);
+        LoadCountries([{ name: "Page not found" }]);
       }
-      const data = await response;
-      dispatch(LoadCountries(data));
-    } catch (error) {
-      console.log(error);
-      LoadCountries([{ name: "Page not found" }]);
-    }
-  };
-  const updateState = (e) => {
-    setSearch(e.target.value);
-  };
-  const getSearch = (e) => {
-    e.preventDefault();
-    setQuery(search);
-  };
+    };
+    getCountry();
+    // setCurrentPage(1);
+  }, [query, dispatch]);
 
   //Pagination req.
 
@@ -107,7 +64,7 @@ const App = () => {
   };
   return (
     <React.Fragment>
-      <Navbar />
+      <Navbar setQuery={setQuery} />
       <div className="container border">
         <div className="row">
           {currentCountries.map((country) => (
@@ -117,8 +74,6 @@ const App = () => {
               population={country.population}
               region={country.region}
               flag={country.flag}
-              show={state}
-              hideModal={hideModal}
               alpha2Code={country.alpha2Code}
               capital={country.capital}
               area={country.area}

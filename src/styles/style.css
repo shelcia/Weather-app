@@ -35,7 +35,20 @@ body {
           justify-content: center;
 }
 
+.container .row .modal .modal-dialog .modal-content .modal-header button {
+  text-shadow: none;
+  color: white;
+  opacity: 0.5;
+  -webkit-transform: all 0.3s ease-in;
+          transform: all 0.3s ease-in;
+}
+
+.container .row .modal .modal-dialog .modal-content .modal-header button:hover {
+  opacity: 1;
+}
+
 p,
+h4,
 h5 {
   color: white;
 }

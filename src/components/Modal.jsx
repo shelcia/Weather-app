@@ -4,7 +4,7 @@ const Modal = ({ alpha2Code, children }) => {
   return (
     <div className="modal fade" id={`modal${alpha2Code}`}>
       <div className="modal-dialog">
-        <div className="modal-content">
+        <div className="modal-content bg-dark">
           <div className="modal-header">
             <h4 className="modal-title">Modal Heading</h4>
             <button type="button" className="close" data-dismiss="modal">

@@ -22,9 +22,19 @@ body {
       align-items: center;
       justify-content: center;
     }
+    .modal .modal-dialog .modal-content .modal-header button {
+      text-shadow: none;
+      color: white;
+      opacity: 0.5;
+      transform: $transistion;
+      &:hover {
+        opacity: 1;
+      }
+    }
   }
 }
 p,
+h4,
 h5 {
   color: white;
 }
