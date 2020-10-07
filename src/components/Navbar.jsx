@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 
 const Navbar = ({ setQuery }) => {
-  const [search, setSearch] = useState("");
+  //   const [search, setSearch] = useState("");
 
   return (
     <React.Fragment>
       <nav className="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
         <a className="navbar-brand" href="/">
-          Countries
+          <h5>Countries</h5>
         </a>
         <button
           className="navbar-toggler"
@@ -21,7 +21,7 @@ const Navbar = ({ setQuery }) => {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+        {/* <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
           <form className="form-inline my-2 my-lg-0">
             <input
               className="form-control mr-sm-2"
@@ -41,7 +41,7 @@ const Navbar = ({ setQuery }) => {
               Search
             </button>
           </form>
-        </div>
+        </div> */}
       </nav>
     </React.Fragment>
   );

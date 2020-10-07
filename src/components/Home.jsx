@@ -4,7 +4,7 @@ import Country from "./Countries";
 const Home = ({ currentCountries }) => {
   return (
     <React.Fragment>
-      <div className="container border">
+      <div className="container">
         <div className="row">
           {currentCountries.map((country) => (
             <Country
