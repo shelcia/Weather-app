@@ -30,10 +30,9 @@ const HomePage = () => {
         setFilteredResults([]);
         return;
       }
-
-      const results = countries.map((country) => country.name);
-      console.log(results);
-      const filteredtResults = results.filter(
+      const countryNames = countries.map((country) => country.name);
+      //   console.log(results);
+      const filteredtResults = countryNames.filter(
         (suggestion) =>
           suggestion.toLowerCase().indexOf(query.toLowerCase()) > -1
       );
@@ -100,7 +99,7 @@ const HomePage = () => {
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "center",
                 }}
-                to={country.name.trim()}
+                to={country.name.replace(/\s+/g, "-").toLowerCase()}
               >
                 <div
                   className="w-100 rounded-lg d-flex align-items-center pointer justify-content-center text-center"
