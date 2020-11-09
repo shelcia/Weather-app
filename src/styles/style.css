@@ -41,4 +41,14 @@ a.card:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
+
+.custom-control-input:checked ~ .custom-control-label::before {
+  border-color: #17a2b8 !important;
+  background-color: #17a2b8 !important;
+}
+
+.custom-control-input:focus ~ .custom-control-label::before {
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 161, 179, 0.296);
+          box-shadow: 0 0 0 0.2rem rgba(0, 161, 179, 0.296);
+}
 /*# sourceMappingURL=style.css.map */

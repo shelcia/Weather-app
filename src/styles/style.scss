@@ -1,5 +1,3 @@
-$base: #ff3e78;
-$transistion: all 0.3s ease-in;
 * {
   font-family: "Poppins", sans-serif;
 }
@@ -38,76 +36,10 @@ a.card {
   }
 }
 
-// .container {
-//   margin-top: 12vh;
-//   .row {
-//     flex-wrap: wrap;
-//     flex-flow: wrap;
-//     justify-content: space-between;
-//     .card {
-//       width: 300px !important;
-//       height: 250px;
-//       align-items: center;
-//       justify-content: center;
-//     }
-//     .modal .modal-dialog .modal-content .modal-header button {
-//       text-shadow: none;
-//       color: white;
-//       opacity: 0.5;
-//       transform: $transistion;
-//       &:hover {
-//         opacity: 1;
-//       }
-//     }
-//   }
-// }
-// p,
-// h4,
-// h5 {
-//   color: white;
-// }
-
-// .page-container {
-//   margin: 5vh auto;
-//   width: 100%;
-//   overflow: auto;
-//   text-align: center;
-//   overflow-x: scroll;
-//   // padding: 10px 0px;
-
-//   .pagination {
-//     margin: 5vh auto;
-//     display: flex;
-//     flex-wrap: wrap;
-//     align-items: center;
-//     justify-content: center;
-//     list-style: none;
-//     outline: none;
-
-//     li {
-//       padding: 10px 0px;
-//       a {
-//         font-size: 0.8rem;
-//         border: 1px solid $base;
-//         padding: 0.5rem;
-//         outline: none;
-//         cursor: pointer;
-//         color: $base;
-//         text-decoration: none;
-//         transition: $transistion;
-
-//         &:hover {
-//           background-color: $base;
-//           color: white;
-//         }
-//       }
-//       .active {
-//         background-color: $base;
-//         color: white;
-//       }
-//       .disabled {
-//         display: none;
-//       }
-//     }
-//   }
-// }
+.custom-control-input:checked ~ .custom-control-label::before {
+  border-color: #17a2b8 !important;
+  background-color: #17a2b8 !important;
+}
+.custom-control-input:focus ~ .custom-control-label::before {
+  box-shadow: 0 0 0 0.2rem rgba(0, 161, 179, 0.296);
+}
