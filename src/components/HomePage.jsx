@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useContext } from "react";
+import { NavLink } from "react-router-dom";
+import { CountryContext } from "./CountryContext";
 import { ThemeContext } from "./ThemeContext";
 
 const HomePage = () => {
-  const [countries, setCountries] = useState([]);
+  const [countries, setCountries] = useContext(CountryContext);
   const [query, setQuery] = useState("");
   const [filteredResults, setFilteredResults] = useState([]);
   const [darkTheme] = useContext(ThemeContext);
@@ -20,7 +22,7 @@ const HomePage = () => {
       }
     };
     getCountries();
-  }, []);
+  }, [setCountries]);
 
   useEffect(() => {
     const searchQuery = () => {
@@ -84,7 +86,7 @@ const HomePage = () => {
           </div>
           <div className="card-columns mt-5">
             {countries.map((country) => (
-              <a
+              <NavLink
                 className={
                   darkTheme
                     ? "card shadow bg-dark rounded-lg p-0"
@@ -98,7 +100,7 @@ const HomePage = () => {
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "center",
                 }}
-                href={country.name.trim()}
+                to={country.name.trim()}
               >
                 <div
                   className="w-100 rounded-lg d-flex align-items-center pointer justify-content-center text-center"
@@ -113,7 +115,7 @@ const HomePage = () => {
                     {country.name}
                   </h2>
                 </div>
-              </a>
+              </NavLink>
             ))}
           </div>
         </div>

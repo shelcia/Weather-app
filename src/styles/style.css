@@ -31,12 +31,12 @@ body {
   z-index: 99;
 }
 
-a {
+a.card {
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
 }
 
-a:hover {
+a.card:hover {
   text-decoration: none !important;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);

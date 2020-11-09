@@ -30,7 +30,7 @@ body {
   position: relative;
   z-index: 99;
 }
-a {
+a.card {
   transition: all 0.2s ease-in;
   &:hover {
     text-decoration: none !important;

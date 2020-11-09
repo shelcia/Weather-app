@@ -1,5 +1,6 @@
 import React from "react";
 import { useContext } from "react";
+import { NavLink } from "react-router-dom";
 import { ThemeContext } from "./ThemeContext";
 
 const TopBar = () => {
@@ -14,9 +15,9 @@ const TopBar = () => {
             : "navbar navbar-light bg-light fixed-top shadow-sm"
         }
       >
-        <a className="navbar-brand ml-5" href="/">
+        <NavLink className="navbar-brand ml-5" to="/">
           Weather App
-        </a>
+        </NavLink>
         <form className="ml-auto mr-5">
           <div className="custom-control custom-switch">
             <input
