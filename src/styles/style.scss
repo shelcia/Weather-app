@@ -22,6 +22,22 @@ body {
   }
 }
 
+.pointer {
+  cursor: pointer;
+}
+
+.list-group {
+  position: relative;
+  z-index: 99;
+}
+a {
+  transition: all 0.2s ease-in;
+  &:hover {
+    text-decoration: none !important;
+    transform: scale(1.1);
+  }
+}
+
 // .container {
 //   margin-top: 12vh;
 //   .row {

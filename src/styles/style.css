@@ -21,4 +21,24 @@ body {
           box-shadow: none !important;
   outline: none;
 }
+
+.pointer {
+  cursor: pointer;
+}
+
+.list-group {
+  position: relative;
+  z-index: 99;
+}
+
+a {
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+a:hover {
+  text-decoration: none !important;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
 /*# sourceMappingURL=style.css.map */
