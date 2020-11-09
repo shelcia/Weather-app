@@ -27,7 +27,7 @@ const Modal = ({ alpha2Code, children, capital }) => {
       <div className="modal-dialog">
         <div className="modal-content bg-dark">
           <div className="modal-header">
-            <h4 className="modal-title">Modal Heading</h4>
+            <h4 className="modal-title">{capital}</h4>
             <button type="button" className="close" data-dismiss="modal">
               &times;
             </button>
@@ -53,90 +53,94 @@ const Modal = ({ alpha2Code, children, capital }) => {
                     <div className="spinner-grow text-danger"></div>
                   </React.Fragment>
                 )}
-                {!loading && (
-                  <React.Fragment>
-                    <table className="table table-dark table-striped">
-                      <thead>
-                        <tr>
-                          <th colSpan="2">Cloud Details</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <th>Clouds</th>
-                          <td>{data.clouds.all}</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                    <table className="table table-dark table-striped">
-                      <thead>
-                        <tr>
-                          <th colSpan="2">Coordinates</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <th>Longitude</th>
-                          <td>{data.coord.lon}&#176;</td>
-                        </tr>
-                        <tr>
-                          <th>Lattitude</th>
-                          <td>{data.coord.lat} &#176;</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                    <table className="table table-dark table-striped">
-                      <thead>
-                        <tr>
-                          <th colSpan="2">Weather Conditions</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <th>Feels_like:</th>
-                          <td>{data.main.feels_like} &#176;F</td>
-                        </tr>
-                        <tr>
-                          <th>Humidity</th>
-                          <td>{data.main.humidity} &#176;F</td>
-                        </tr>
-                        <tr>
-                          <th>Pressure:</th>
-                          <td>{data.main.pressure} atm</td>
-                        </tr>
-                        <tr>
-                          <th>Temperature:</th>
-                          <td>{data.main.temp} &#176;F</td>
-                        </tr>
-                        <tr>
-                          <th>Maximum Temperature</th>
-                          <td>{data.main.temp_max} &#176;F</td>
-                        </tr>
-                        <tr>
-                          <th>Minimum Temperature:</th>
-                          <td>{data.main.temp_min} &#176;F</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                    <table className="table table-dark table-striped">
-                      <thead>
-                        <tr>
-                          <th colSpan="2">Winds</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <th>Degree:</th>
-                          <td>{data.wind.deg} &#176;</td>
-                        </tr>
-                        <tr>
-                          <th>Speed:</th>
-                          <td> {data.wind.speed} m/s</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </React.Fragment>
-                )}
+
+                {!loading &&
+                  (typeof data.clouds === undefined ? (
+                    <React.Fragment>No data available</React.Fragment>
+                  ) : (
+                    <React.Fragment>
+                      <table className="table table-dark table-striped">
+                        <thead>
+                          <tr>
+                            <th colSpan="2">Cloud Details</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th>Clouds</th>
+                            <td>{data.clouds.all}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <table className="table table-dark table-striped">
+                        <thead>
+                          <tr>
+                            <th colSpan="2">Coordinates</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th>Longitude</th>
+                            <td>{data.coord.lon}&#176;</td>
+                          </tr>
+                          <tr>
+                            <th>Lattitude</th>
+                            <td>{data.coord.lat} &#176;</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <table className="table table-dark table-striped">
+                        <thead>
+                          <tr>
+                            <th colSpan="2">Weather Conditions</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th>Feels_like:</th>
+                            <td>{data.main.feels_like} &#176;F</td>
+                          </tr>
+                          <tr>
+                            <th>Humidity</th>
+                            <td>{data.main.humidity} &#176;F</td>
+                          </tr>
+                          <tr>
+                            <th>Pressure:</th>
+                            <td>{data.main.pressure} atm</td>
+                          </tr>
+                          <tr>
+                            <th>Temperature:</th>
+                            <td>{data.main.temp} &#176;F</td>
+                          </tr>
+                          <tr>
+                            <th>Maximum Temperature</th>
+                            <td>{data.main.temp_max} &#176;F</td>
+                          </tr>
+                          <tr>
+                            <th>Minimum Temperature:</th>
+                            <td>{data.main.temp_min} &#176;F</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <table className="table table-dark table-striped">
+                        <thead>
+                          <tr>
+                            <th colSpan="2">Winds</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th>Degree:</th>
+                            <td>{data.wind.deg} &#176;</td>
+                          </tr>
+                          <tr>
+                            <th>Speed:</th>
+                            <td> {data.wind.speed} m/s</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </React.Fragment>
+                  ))}
               </React.Fragment>
             )}
           </div>

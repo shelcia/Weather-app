@@ -1,8 +1,4 @@
 * {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
 
@@ -10,101 +6,19 @@ body {
   background-color: #282c34 !important;
 }
 
-.container {
-  margin-top: 12vh;
+.bg-dark {
+  background-color: #282c34 !important;
 }
 
-.container .row {
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-flow: wrap;
-      flex-flow: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+.form-control {
+  background-color: #282c3400 !important;
+  border: none !important;
+  border-bottom: 1px solid #17a2b8 !important;
 }
 
-.container .row .card {
-  width: 300px !important;
-  height: 250px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.container .row .modal .modal-dialog .modal-content .modal-header button {
-  text-shadow: none;
-  color: white;
-  opacity: 0.5;
-  -webkit-transform: all 0.3s ease-in;
-          transform: all 0.3s ease-in;
-}
-
-.container .row .modal .modal-dialog .modal-content .modal-header button:hover {
-  opacity: 1;
-}
-
-p,
-h4,
-h5 {
-  color: white;
-}
-
-.page-container {
-  margin: 5vh auto;
-  width: 100%;
-  overflow: auto;
-  text-align: center;
-  overflow-x: scroll;
-}
-
-.page-container .pagination {
-  margin: 5vh auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  list-style: none;
+.form-control:focus {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
   outline: none;
-}
-
-.page-container .pagination li {
-  padding: 10px 0px;
-}
-
-.page-container .pagination li a {
-  font-size: 0.8rem;
-  border: 1px solid #ff3e78;
-  padding: 0.5rem;
-  outline: none;
-  cursor: pointer;
-  color: #ff3e78;
-  text-decoration: none;
-  -webkit-transition: all 0.3s ease-in;
-  transition: all 0.3s ease-in;
-}
-
-.page-container .pagination li a:hover {
-  background-color: #ff3e78;
-  color: white;
-}
-
-.page-container .pagination li .active {
-  background-color: #ff3e78;
-  color: white;
-}
-
-.page-container .pagination li .disabled {
-  display: none;
 }
 /*# sourceMappingURL=style.css.map */

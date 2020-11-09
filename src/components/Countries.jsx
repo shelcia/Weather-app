@@ -1,6 +1,5 @@
 import React from "react";
 import Modal from "./Modal";
-import { useState } from "react";
 
 const Country = ({
   name,
