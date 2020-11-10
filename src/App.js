@@ -7,6 +7,7 @@ import { CountryProvider } from "./components/CountryContext";
 
 import TopBar from "./components/TopBar";
 import "./styles/style.css";
+import AboutPage from "./components/AboutPage";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
             <TopBar />
             <Switch>
               <Route path="/" exact component={HomePage} />
+              <Route path="/about" component={AboutPage} />
               <Route path="/:id" component={CountryPage} />
             </Switch>
           </BrowserRouter>

@@ -51,4 +51,26 @@ a.card:hover {
   -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 161, 179, 0.296);
           box-shadow: 0 0 0 0.2rem rgba(0, 161, 179, 0.296);
 }
+
+body ::-webkit-scrollbar {
+  height: 5px;
+  /*for horizonatal scrollbar*/
+  width: 5px;
+}
+
+/* Track */
+body ::-webkit-scrollbar-track {
+  background: #f1f1f100;
+}
+
+/* Handle */
+body ::-webkit-scrollbar-thumb {
+  background: #17a2b8;
+  border-radius: 2.5px;
+}
+
+/* Handle on hover */
+body ::-webkit-scrollbar-thumb:hover {
+  background: #17a2b8;
+}
 /*# sourceMappingURL=style.css.map */

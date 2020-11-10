@@ -64,9 +64,6 @@ const HomePage = () => {
               placeholder="search any country"
               onChange={(event) => setQuery(event.target.value)}
             />
-            <button type="submit" className="btn btn-info ml-3">
-              Search
-            </button>
           </form>
           <div className="list-group shadow-lg">
             {filteredResults.map((result) => (
