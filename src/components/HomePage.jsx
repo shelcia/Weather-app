@@ -15,7 +15,7 @@ const HomePage = () => {
       try {
         const response = await fetch("https://restcountries.eu/rest/v2/all");
         const result = await response.json();
-        console.log(result);
+        // console.log(result);
         setCountries(result);
       } catch (error) {
         console.error(error);
@@ -36,7 +36,7 @@ const HomePage = () => {
         (suggestion) =>
           suggestion.toLowerCase().indexOf(query.toLowerCase()) > -1
       );
-      console.log(filteredtResults);
+      //   console.log(filteredtResults);
       setFilteredResults(filteredtResults.slice(1, 6));
     };
     searchQuery();
@@ -67,8 +67,8 @@ const HomePage = () => {
           </form>
           <div className="list-group shadow-lg">
             {filteredResults.map((result) => (
-              <a
-                href="/"
+              <NavLink
+                to={result.replace(/\s+/g, "-").toLowerCase()}
                 key={result}
                 className={
                   darkTheme
@@ -77,7 +77,7 @@ const HomePage = () => {
                 }
               >
                 {result}
-              </a>
+              </NavLink>
             ))}
           </div>
           <div className="card-columns mt-5">

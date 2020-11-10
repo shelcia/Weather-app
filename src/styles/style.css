@@ -10,6 +10,15 @@ body {
   background-color: #282c34 !important;
 }
 
+.bg-dark td,
+.bg-dark th {
+  color: rgba(255, 255, 255, 0.87) !important;
+}
+
+.text-light {
+  color: rgba(255, 255, 255, 0.87) !important;
+}
+
 .form-control {
   background-color: #282c3400 !important;
   border: none !important;

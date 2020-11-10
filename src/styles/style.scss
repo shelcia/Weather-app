@@ -8,8 +8,14 @@ body {
 
 .bg-dark {
   background-color: #282c34 !important;
+  td,
+  th {
+    color: rgba(255, 255, 255, 0.87) !important;
+  }
 }
-
+.text-light {
+  color: rgba(255, 255, 255, 0.87) !important;
+}
 .form-control {
   background-color: #282c3400 !important;
   border: none !important;

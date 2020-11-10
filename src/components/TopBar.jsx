@@ -20,7 +20,10 @@ const TopBar = () => {
         </NavLink>
 
         <div className="ml-auto mr-5 d-flex">
-          <NavLink className="text-light mr-4" to="/about">
+          <NavLink
+            className={darkTheme ? "text-light mr-4" : "text-dark mr-4"}
+            to="/about"
+          >
             About
           </NavLink>
           <form>

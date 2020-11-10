@@ -10,6 +10,7 @@ const CountryPage = ({ match }) => {
   const [loading, setLoading] = useState(true);
   const [isMessage, setIsMessage] = useState(false);
   const [data, setData] = useState({
+    name: "",
     clouds: { all: "" },
     coord: { lon: "", lat: "" },
     main: {
@@ -22,7 +23,7 @@ const CountryPage = ({ match }) => {
     },
     wind: { speed: "", deg: "" },
   });
-  console.log(data);
+  //   console.log(data);
 
   const [country, setCountry] = useState([]);
   const countryName = match.params.id.replace(/-/g, " ");
@@ -35,7 +36,7 @@ const CountryPage = ({ match }) => {
     try {
       const response = await fetch(API);
       const results = await response.json();
-      console.log(results);
+      //   console.log(results);
       if (results.cod === "400") {
         setIsMessage(true);
         return;
@@ -106,14 +107,16 @@ const CountryPage = ({ match }) => {
                   </p>
                 )}
                 {!loading && <Weather darkTheme={darkTheme} data={data} />}
-                <h2
-                  className={
-                    darkTheme ? "text-light mt-4 mb-1" : "text-dark mt-4 mb-1"
-                  }
-                >
-                  More Details about the Country
-                </h2>
-                <hr className="mb-4"></hr>
+                <div className="text-center w-75 mx-auto">
+                  <h2
+                    className={
+                      darkTheme ? "text-light mt-4 mb-1" : "text-dark mt-4 mb-1"
+                    }
+                  >
+                    More Details about the Country
+                  </h2>
+                  <hr className="mb-4"></hr>
+                </div>
                 <table
                   className={
                     darkTheme

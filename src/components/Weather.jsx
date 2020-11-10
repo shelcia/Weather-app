@@ -3,6 +3,13 @@ import React from "react";
 const Weather = ({ darkTheme, data }) => {
   return (
     <React.Fragment>
+      <div className="alert alert-info w-75 mx-auto alert-dismissible">
+        <button type="button" className="close" data-dismiss="alert">
+          &times;
+        </button>
+        <strong>Note:</strong> Weather results are based on country's capital(
+        {data.name})
+      </div>
       <table
         className={
           darkTheme
