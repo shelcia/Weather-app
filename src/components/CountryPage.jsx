@@ -36,8 +36,8 @@ const CountryPage = ({ match }) => {
     try {
       const response = await fetch(API);
       const results = await response.json();
-      //   console.log(results);
-      if (results.cod === "400") {
+      console.log(results);
+      if (results.cod === "400" || results.cod === "404") {
         setIsMessage(true);
         return;
       }
