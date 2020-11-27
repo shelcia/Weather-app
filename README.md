@@ -1,9 +1,9 @@
+# Want to contribute ? Join our server (NWoC'20)
+
+https://discord.gg/TkKHAYVCza
+
+
 # Weather App
-
-Want to contribute ? Join our server (NWoC'20)
-
-https://discord.gg/BqYZG47V
-
 
 ### Resources used
 
