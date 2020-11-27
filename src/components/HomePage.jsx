@@ -37,7 +37,7 @@ const HomePage = () => {
           suggestion.toLowerCase().indexOf(query.toLowerCase()) === 0
       );
       //   console.log(filteredtResults);
-      setFilteredResults(filteredtResults.slice(1, 6));
+      setFilteredResults(filteredtResults.slice(0, 6));
     };
     searchQuery();
   }, [countries, query]);
