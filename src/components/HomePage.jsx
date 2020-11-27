@@ -34,10 +34,10 @@ const HomePage = () => {
       //   console.log(results);
       const filteredtResults = countryNames.filter(
         (suggestion) =>
-          suggestion.toLowerCase().indexOf(query.toLowerCase()) > -1
+          suggestion.toLowerCase().indexOf(query.toLowerCase()) === 0
       );
       //   console.log(filteredtResults);
-      setFilteredResults(filteredtResults.slice(1, 6));
+      setFilteredResults(filteredtResults.slice(0, 6));
     };
     searchQuery();
   }, [countries, query]);
