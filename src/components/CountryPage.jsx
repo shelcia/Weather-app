@@ -81,7 +81,7 @@ const CountryPage = ({ match }) => {
                 <img
                   src={country.flag}
                   alt=""
-                  className="img-fluid mb-3 shadow-sm w-50"
+                  className="img-fluid mb-3 shadow-sm W-50"
                 />
                 <h2
                   className={darkTheme ? "text-light mb-3" : "text-dark mb-3"}
@@ -107,7 +107,7 @@ const CountryPage = ({ match }) => {
                   </p>
                 )}
                 {!loading && <Weather darkTheme={darkTheme} data={data} />}
-                <div className="text-center w-75 mx-auto">
+                <div className="text-center W-75 mx-auto">
                   <h2
                     className={
                       darkTheme ? "text-light mt-4 mb-1" : "text-dark mt-4 mb-1"
@@ -120,8 +120,8 @@ const CountryPage = ({ match }) => {
                 <table
                   className={
                     darkTheme
-                      ? "table table-dark table-striped table-hover w-75 mx-auto shadow mb-5"
-                      : "table table-hover table-striped w-75 mx-auto shadow-sm mb-5"
+                      ? "table table-dark table-striped table-hover W-75 mx-auto shadow mb-5"
+                      : "table table-hover table-striped W-75 mx-auto shadow-sm mb-5"
                   }
                 >
                   <tbody>
@@ -152,8 +152,8 @@ const CountryPage = ({ match }) => {
                 <table
                   className={
                     darkTheme
-                      ? "table table-dark table-striped table-hover w-75 mx-auto shadow mb-5"
-                      : "table table-hover table-striped w-75 mx-auto shadow-sm mb-5"
+                      ? "table table-dark table-striped table-hover W-75 mx-auto shadow mb-5"
+                      : "table table-hover table-striped W-75 mx-auto shadow-sm mb-5"
                   }
                 >
                   <thead>
@@ -177,8 +177,8 @@ const CountryPage = ({ match }) => {
                 <table
                   className={
                     darkTheme
-                      ? "table table-dark table-striped table-hover w-75 mx-auto shadow mb-5"
-                      : "table table-hover table-striped w-75 mx-auto shadow-sm mb-5"
+                      ? "table table-dark table-striped table-hover W-75 mx-auto shadow mb-5"
+                      : "table table-hover table-striped W-75 mx-auto shadow-sm mb-5"
                   }
                 >
                   <thead>

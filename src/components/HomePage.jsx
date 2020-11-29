@@ -55,7 +55,7 @@ const HomePage = () => {
         >
           <form className="input-group">
             <input
-              type="text"
+              type="search"
               className={
                 darkTheme
                   ? "form-control rounded-0 pl-0 text-light"

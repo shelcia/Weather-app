@@ -15,11 +15,11 @@ const TopBar = () => {
             : "navbar navbar-light bg-light fixed-top shadow-sm"
         }
       >
-        <NavLink className="navbar-brand ml-5" to="/">
+        <NavLink className="navbar-brand" to="/">
           Weather App
         </NavLink>
 
-        <div className="ml-auto mr-5 d-flex">
+        <div className="ml-auto d-flex">
           <NavLink
             className={darkTheme ? "text-light mr-4" : "text-dark mr-4"}
             to="/about"
