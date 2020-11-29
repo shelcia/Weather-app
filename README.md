@@ -14,7 +14,7 @@ Open Weather API: https://openweathermap.org/api
 
 ### Deployed at
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/648bb001-da04-4000-a523-2fbd2aacc7c9/deploy-status)](https://app.netlify.com/sites/react-weather-app-shelcia/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/648bb001-da04-4000-a523-2fbd2aacc7c9/deploy-status)](https://react-weather-app-shelcia.netlify.app)
 
 
 
