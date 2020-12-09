@@ -109,7 +109,7 @@ const HomePage = () => {
                       "linear-gradient(to bottom, rgb(0, 0, 0, .05) 0%, rgb(0,0,0,.21) 40%, rgb(0,0,0,.21) 60%, rgb(0, 0, 0, 0.05) 100%)"
                   }}
                 >
-                  <h2 className={darkTheme && "text-light font"} style={{ zIndex: 10, color: "#fff",  fontWeight: 550 }}>
+                  <h2 className={darkTheme && "text-light font"} style={{ zIndex: 10, color: "rgb(255,255,255, .93)",  fontWeight: 550 }}>
                     {country.name}
                   </h2>
                 </div>
