@@ -97,7 +97,7 @@ const CountryPage = ({ match }) => {
                   onClick={(event) => getWeatherDetails(country.capital, event)}
                 >
                   Show Weather Details
-                  {country.capital}
+                  
                 </button>
                 {isMessage && (
                   <p
