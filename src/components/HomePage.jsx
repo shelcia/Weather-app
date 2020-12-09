@@ -30,13 +30,14 @@ const HomePage = () => {
         setFilteredResults([]);
         return;
       }
-      const countryNames = countries.map((country) => country.name);
+      const countryNames = countries.map((country) => country.capital);
       //   console.log(results);
       const filteredtResults = countryNames.filter(
         (suggestion) =>
           suggestion.toLowerCase().indexOf(query.toLowerCase()) > -1
       );
-      //   console.log(filteredtResults);
+        console.log(filteredtResults);
+        
       setFilteredResults(filteredtResults.slice(1, 6));
     };
     searchQuery();
@@ -66,8 +67,10 @@ const HomePage = () => {
             />
           </form>
           <div className="list-group shadow-lg">
-            {filteredResults.map((result) => (
+            {
+            filteredResults.map((result) => (
               <NavLink
+             
                 to={result.replace(/\s+/g, "-").toLowerCase()}
                 key={result}
                 className={

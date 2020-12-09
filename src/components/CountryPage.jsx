@@ -26,17 +26,20 @@ const CountryPage = ({ match }) => {
   //   console.log(data);
 
   const [country, setCountry] = useState([]);
-  const countryName = match.params.id.replace(/-/g, " ");
+  
+  const capitalName = match.params.id.replace(/-/g, " ");
 
-  const API_KEY = process.env.REACT_APP_API_KEY;
+  const API_KEY = process.env.REACT_WEATHER_APIKEY;
 
   const getWeatherDetails = async (capital, event) => {
     event.preventDefault();
     const API = `https://api.openweathermap.org/data/2.5/weather?q=${capital}&appid=${API_KEY}`;
+
     try {
       const response = await fetch(API);
       const results = await response.json();
       console.log(results);
+      console.log("1");
       if (results.cod === "400" || results.cod === "404") {
         setIsMessage(true);
         return;
@@ -52,7 +55,7 @@ const CountryPage = ({ match }) => {
     const getCountryDetails = async () => {
       try {
         const results = await fetch(
-          `https://restcountries.eu/rest/v2/name/${countryName}?fullText=true`
+          `https://restcountries.eu/rest/v2/capital/${capitalName}?fullText=true`
         );
         const response = await results.json();
         setCountry(response);
@@ -61,7 +64,7 @@ const CountryPage = ({ match }) => {
       }
     };
     getCountryDetails();
-  }, [countryName]);
+  }, [capitalName]);
 
   return (
     <React.Fragment>
@@ -94,6 +97,7 @@ const CountryPage = ({ match }) => {
                   onClick={(event) => getWeatherDetails(country.capital, event)}
                 >
                   Show Weather Details
+                  {country.capital}
                 </button>
                 {isMessage && (
                   <p
