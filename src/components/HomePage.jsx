@@ -103,7 +103,7 @@ const HomePage = () => {
                   style={{
                     backgroundColor: darkTheme
                       ? "#00000060"
-                      : "rgb(0,0,0,0.19)",
+                      : "rgb(0,0,0,0.15)",
                     height: "150px",
                     backgroundImage: !darkTheme &&
                       "linear-gradient(to bottom, rgb(0, 0, 0, .05) 0%, rgb(0,0,0,.21) 40%, rgb(0,0,0,.21) 60%, rgb(0, 0, 0, 0.05) 100%)"
