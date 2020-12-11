@@ -36,9 +36,13 @@ body {
 }
 a.card {
   transition: all 0.2s ease-in;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   &:hover {
     text-decoration: none !important;
     transform: scale(1.1);
+    -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   }
 }
 
@@ -68,4 +72,20 @@ body ::-webkit-scrollbar-thumb {
 /* Handle on hover */
 body ::-webkit-scrollbar-thumb:hover {
   background: #17a2b8;
+}
+
+.W-75 {
+  max-width: 75% !important;
+}
+.W-50 {
+  max-width: 50% !important;
+}
+
+@media (max-width: 717px) {
+  .W-75 {
+    max-width: 90% !important;
+  }
+  .W-50 {
+    max-width: 75% !important;
+  }
 }

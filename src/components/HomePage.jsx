@@ -34,11 +34,11 @@ const HomePage = () => {
       //   console.log(results);
       const filteredtResults = countryNames.filter(
         (suggestion) =>
-          suggestion.toLowerCase().indexOf(query.toLowerCase()) > -1
+          suggestion.toLowerCase().indexOf(query.toLowerCase()) === 0
       );
-        console.log(filteredtResults);
-        
-      setFilteredResults(filteredtResults.slice(1, 6));
+
+      //   console.log(filteredtResults);
+      setFilteredResults(filteredtResults.slice(0, 6));
     };
     searchQuery();
   }, [countries, query]);
@@ -56,7 +56,7 @@ const HomePage = () => {
         >
           <form className="input-group">
             <input
-              type="text"
+              type="search"
               className={
                 darkTheme
                   ? "form-control rounded-0 pl-0 text-light"
@@ -106,11 +106,13 @@ const HomePage = () => {
                   style={{
                     backgroundColor: darkTheme
                       ? "#00000060"
-                      : "rgb(255,255,255,0.7)",
+                      : "rgb(0,0,0,0.15)",
                     height: "150px",
+                    backgroundImage: !darkTheme &&
+                      "linear-gradient(to bottom, rgb(0, 0, 0, .05) 0%, rgb(0,0,0,.21) 40%, rgb(0,0,0,.21) 60%, rgb(0, 0, 0, 0.05) 100%)"
                   }}
                 >
-                  <h2 className={darkTheme ? "text-light font" : "text-dark"}>
+                  <h2 className={darkTheme && "text-light font"} style={{ zIndex: 10, color: "rgb(255,255,255, .93)",  fontWeight: 550 }}>
                     {country.name}
                   </h2>
                 </div>
