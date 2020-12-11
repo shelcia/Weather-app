@@ -29,7 +29,7 @@ const CountryPage = ({ match }) => {
   
   const capitalName = match.params.id.replace(/-/g, " ");
 
-  const API_KEY = process.env.REACT_WEATHER_APIKEY;
+  const API_KEY = process.env.REACT_APP_API_KEY;
 
   const getWeatherDetails = async (capital, event) => {
     event.preventDefault();
