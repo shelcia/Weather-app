@@ -19,7 +19,7 @@
 ![demo2](assets/demo/demo2.png)
 ![demo3](assets/demo/demo4.png)
 
-[Check out complete walkthrough of ToDoista](https://vimeo.com/490218590)
+[Check out complete walkthrough of Weather app](https://vimeo.com/490218590)
 
 
 ### Resources used
