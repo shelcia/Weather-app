@@ -76,7 +76,7 @@ const HomePage = () => {
                     : "list-group-item list-group-item-action"
                 }
               >
-                {result}
+                <span style={{color: "yellow"}}>{query}</span>{result.substring(query.length)}
               </NavLink>
             ))}
           </div>
