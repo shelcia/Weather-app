@@ -76,7 +76,10 @@ const HomePage = () => {
                     : "list-group-item list-group-item-action"
                 }
               >
-                <span style={{color: "yellow"}}>{query}</span>{result.substring(query.length)}
+                <span style={{ color: "#17a2b8" }} className="font-weight-bold">
+                  {query}
+                </span>
+                {result.substring(query.length)}
               </NavLink>
             ))}
           </div>
@@ -105,11 +108,19 @@ const HomePage = () => {
                       ? "#00000060"
                       : "rgb(0,0,0,0.15)",
                     height: "150px",
-                    backgroundImage: !darkTheme &&
-                      "linear-gradient(to bottom, rgb(0, 0, 0, .05) 0%, rgb(0,0,0,.21) 40%, rgb(0,0,0,.21) 60%, rgb(0, 0, 0, 0.05) 100%)"
+                    backgroundImage:
+                      !darkTheme &&
+                      "linear-gradient(to bottom, rgb(0, 0, 0, .05) 0%, rgb(0,0,0,.21) 40%, rgb(0,0,0,.21) 60%, rgb(0, 0, 0, 0.05) 100%)",
                   }}
                 >
-                  <h2 className={darkTheme && "text-light font"} style={{ zIndex: 10, color: "rgb(255,255,255, .93)",  fontWeight: 550 }}>
+                  <h2
+                    className={darkTheme && "text-light font"}
+                    style={{
+                      zIndex: 10,
+                      color: "rgb(255,255,255, .93)",
+                      fontWeight: 550,
+                    }}
+                  >
                     {country.name}
                   </h2>
                 </div>
