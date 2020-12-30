@@ -4,11 +4,13 @@ import { useEffect } from "react";
 import { useContext } from "react";
 import { ThemeContext } from "./ThemeContext";
 import Weather from "./Weather";
+import { CountryContext } from "./CountryContext";
 
 const CountryPage = ({ match }) => {
   const [darkTheme] = useContext(ThemeContext);
   const [loading, setLoading] = useState(true);
   const [isMessage, setIsMessage] = useState(false);
+  const [countries] = useContext(CountryContext);
   const [data, setData] = useState({
     name: "",
     clouds: { all: "" },
@@ -26,7 +28,16 @@ const CountryPage = ({ match }) => {
   //   console.log(data);
 
   const [country, setCountry] = useState([]);
-  const countryName = match.params.id.replace(/-/g, " ");
+
+  const capitalValue = match.params.id.replace(/-/g, " ");
+  var countryName = capitalValue;
+  
+  // extracting country for the query capital
+  const checkCountryforCapital = countries.find(
+  (index) => index.capital.toLowerCase() === capitalValue.toLowerCase()
+  );
+  if(typeof checkCountryforCapital != 'undefined')
+    countryName = checkCountryforCapital.name;
 
   const API_KEY = process.env.REACT_APP_API_KEY;
 

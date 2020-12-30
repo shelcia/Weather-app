@@ -30,13 +30,21 @@ const HomePage = () => {
         setFilteredResults([]);
         return;
       }
-      const countryNames = countries.map((country) => country.name);
-      //   console.log(results);
-      const filteredtResults = countryNames.filter(
+
+      const countryNamesAndCapitals = [];
+  
+      countries.forEach(function (country) {
+          countryNamesAndCapitals.push(country.name);
+          countryNamesAndCapitals.push(country.capital);    
+      });
+       
+      // console.log(countryNamesAndCapitals)
+
+      const filteredtResults = countryNamesAndCapitals.filter(
         (suggestion) =>
           suggestion.toLowerCase().indexOf(query.toLowerCase()) === 0
       );
-      //   console.log(filteredtResults);
+      console.log(filteredtResults);
       setFilteredResults(filteredtResults.slice(0, 6));
     };
     searchQuery();
@@ -61,7 +69,7 @@ const HomePage = () => {
                   ? "form-control rounded-0 pl-0 text-light"
                   : "form-control rounded-0 pl-0"
               }
-              placeholder="search any country"
+              placeholder="Search any Country or Capital name"
               onChange={(event) => setQuery(event.target.value)}
             />
           </form>
