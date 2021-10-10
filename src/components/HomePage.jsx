@@ -1,54 +1,55 @@
-import React, { useState, useEffect } from "react";
+// import React, { useState, useEffect } from "react";
+import React from "react";
 import { useContext } from "react";
-import { NavLink } from "react-router-dom";
-import { CountryContext } from "./CountryContext";
+// import { NavLink } from "react-router-dom";
+// import { CountryContext } from "./CountryContext";
 import { ThemeContext } from "./ThemeContext";
 
 const HomePage = () => {
-  const [countries, setCountries] = useContext(CountryContext);
-  const [query, setQuery] = useState("");
-  const [filteredResults, setFilteredResults] = useState([]);
+  // const [countries, setCountries] = useContext(CountryContext);
+  // const [query, setQuery] = useState("");
+  // const [filteredResults, setFilteredResults] = useState([]);
   const [darkTheme] = useContext(ThemeContext);
 
-  useEffect(() => {
-    const getCountries = async () => {
-      try {
-        const response = await fetch("https://restcountries.eu/rest/v2/all");
-        const result = await response.json();
-        // console.log(result);
-        setCountries(result);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    getCountries();
-  }, [setCountries]);
+  // useEffect(() => {
+  //   const getCountries = async () => {
+  //     try {
+  //       const response = await fetch("https://restcountries.eu/rest/v2/all");
+  //       const result = await response.json();
+  //       // console.log(result);
+  //       setCountries(result);
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   };
+  //   getCountries();
+  // }, [setCountries]);
 
-  useEffect(() => {
-    const searchQuery = () => {
-      if (query === "") {
-        setFilteredResults([]);
-        return;
-      }
+  // useEffect(() => {
+  //   const searchQuery = () => {
+  //     if (query === "") {
+  //       setFilteredResults([]);
+  //       return;
+  //     }
 
-      const countryNamesAndCapitals = [];
-  
-      countries.forEach(function (country) {
-          countryNamesAndCapitals.push(country.name);
-          countryNamesAndCapitals.push(country.capital);    
-      });
-       
-      // console.log(countryNamesAndCapitals)
+  //     const countryNamesAndCapitals = [];
 
-      const filteredtResults = countryNamesAndCapitals.filter(
-        (suggestion) =>
-          suggestion.toLowerCase().indexOf(query.toLowerCase()) === 0
-      );
-      console.log(filteredtResults);
-      setFilteredResults(filteredtResults.slice(0, 6));
-    };
-    searchQuery();
-  }, [countries, query]);
+  //     countries.forEach(function (country) {
+  //       countryNamesAndCapitals.push(country.name);
+  //       countryNamesAndCapitals.push(country.capital);
+  //     });
+
+  //     // console.log(countryNamesAndCapitals)
+
+  //     const filteredtResults = countryNamesAndCapitals.filter(
+  //       (suggestion) =>
+  //         suggestion.toLowerCase().indexOf(query.toLowerCase()) === 0
+  //     );
+  //     console.log(filteredtResults);
+  //     setFilteredResults(filteredtResults.slice(0, 6));
+  //   };
+  //   searchQuery();
+  // }, [countries, query]);
   return (
     <React.Fragment>
       <div
@@ -61,7 +62,12 @@ const HomePage = () => {
           className="container"
           style={{ paddingTop: "15vh", height: "100vh", overflowY: "scroll" }}
         >
-          <form className="input-group">
+          <h5 className={darkTheme ? "text-white" : "text-dark"}>
+            Rest Countries have made their API private. We are constructing our
+            own API (which is more reliable) this time.
+          </h5>
+
+          {/* <form className="input-group">
             <input
               type="search"
               className={
@@ -72,8 +78,8 @@ const HomePage = () => {
               placeholder="Search any Country or Capital name"
               onChange={(event) => setQuery(event.target.value)}
             />
-          </form>
-          <div className="list-group shadow-lg">
+          </form> */}
+          {/* <div className="list-group shadow-lg">
             {filteredResults.map((result) => (
               <NavLink
                 to={result.replace(/\s+/g, "-").toLowerCase()}
@@ -90,8 +96,8 @@ const HomePage = () => {
                 {result.substring(query.length)}
               </NavLink>
             ))}
-          </div>
-          <div className="card-columns mt-5">
+          </div> */}
+          {/* <div className="card-columns mt-5">
             {countries.map((country) => (
               <NavLink
                 className={
@@ -134,7 +140,7 @@ const HomePage = () => {
                 </div>
               </NavLink>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </React.Fragment>
