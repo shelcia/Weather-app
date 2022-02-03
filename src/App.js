@@ -1,11 +1,12 @@
 import React from "react";
 
 import { useRoutes } from "react-router-dom";
-import { CountryProvider } from "./components/CountryContext";
+// import { CountryProvider } from "./components/CountryContext";
 import { ThemeProvider } from "./context/ThemeContext";
 
 import TopBar from "./components/TopBar";
 import routes from "./routes";
+import "./styles/bootstrap/bootstrap.css";
 import "./styles/style.css";
 
 const App = () => {
@@ -14,10 +15,8 @@ const App = () => {
   return (
     <React.Fragment>
       <ThemeProvider>
-        <CountryProvider>
-          <TopBar />
-          {allPages}
-        </CountryProvider>
+        <TopBar />
+        {allPages}
       </ThemeProvider>
     </React.Fragment>
   );

@@ -21,7 +21,7 @@ const AboutPage = () => {
           <h4 className={darkTheme ? "text-light mb-2" : "text-dark mb-2"}>
             Rest Countries API
           </h4>
-          <a href="https://restcountries.eu/">https://restcountries.eu/</a>
+          <a href="https://restcountries.com/">https://restcountries.com/</a>
           <h4
             className={
               darkTheme ? "text-light mb-2 mt-5" : "text-dark mb-2 mt-5"
@@ -44,7 +44,6 @@ const AboutPage = () => {
           <a href="https://github.com/shelcia/Weather-app">
             Source code in github
           </a>
-
           <h4
             className={
               darkTheme ? "text-light mb-2 mt-5" : "text-dark mb-2 mt-5"
@@ -53,7 +52,10 @@ const AboutPage = () => {
             About the Developer
           </h4>
           <a href="https://www.linkedin.com/in/shelcia/">Linkedin</a>
-          <a href="https://shelcia-portfolio.netlify.app/" className="ml-5">
+          <a href="https://github.com/shelcia" className="ms-5">
+            Github
+          </a>
+          <a href="http://shelcia-dev.me/" className="ms-5">
             Portfolio
           </a>
           <hr></hr>

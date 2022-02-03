@@ -7,14 +7,12 @@ import { useParams } from "react-router-dom";
 const CountryPage = ({ match }) => {
   const { id } = useParams();
 
-  // console.log(id);
-
   const countries = CountriesData;
   const country = countries.filter(
     (item) => item.name?.common?.replace(/\s+/g, "-").toLowerCase() === id
   );
 
-  console.log(country);
+  // console.log(country);
 
   const [darkTheme] = useContext(ThemeContext);
   const [loading, setLoading] = useState(true);
@@ -34,19 +32,6 @@ const CountryPage = ({ match }) => {
     },
     wind: { speed: "", deg: "" },
   });
-  //   console.log(data);
-
-  // const [country, setCountry] = useState([]);
-
-  const capitalValue = id.replace(/-/g, " ");
-  var countryName = capitalValue;
-
-  // extracting country for the query capital
-  // const checkCountryforCapital = countries.find(
-  //   (index) => index.capital.toLowerCase() === capitalValue.toLowerCase()
-  // );
-  // if (typeof checkCountryforCapital != "undefined")
-  //   countryName = checkCountryforCapital.name;
 
   const API_KEY = process.env.REACT_APP_API_KEY;
 
@@ -67,21 +52,6 @@ const CountryPage = ({ match }) => {
       console.log(error);
     }
   };
-
-  // useEffect(() => {
-  //   const getCountryDetails = async () => {
-  //     try {
-  //       const results = await fetch(
-  //         `https://restcountries.eu/rest/v2/name/${countryName}?fullText=true`
-  //       );
-  //       const response = await results.json();
-  //       setCountry(response);
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
-  //   getCountryDetails();
-  // }, [countryName]);
 
   return (
     <React.Fragment>
@@ -110,7 +80,7 @@ const CountryPage = ({ match }) => {
                 </h2>
 
                 <button
-                  className="btn btn-info mb-4"
+                  className="btn btn-primary mb-4"
                   onClick={(event) =>
                     getWeatherDetails(country.capital[0], event)
                   }
@@ -141,8 +111,8 @@ const CountryPage = ({ match }) => {
                 <table
                   className={
                     darkTheme
-                      ? "table table-dark table-striped table-hover W-75 mx-auto shadow mb-5"
-                      : "table table-hover table-striped W-75 mx-auto shadow-sm mb-5"
+                      ? "table table-dark table-hover mx-auto mb-5"
+                      : "table table-hover mx-auto mb-5"
                   }
                 >
                   <tbody>
@@ -164,60 +134,6 @@ const CountryPage = ({ match }) => {
                         {country.area} km <sup>2</sup>
                       </td>
                     </tr>
-                    {/* <tr>
-                      <th>Native Name </th>
-                      <td>{country.nativeName}</td>
-                    </tr> */}
-                  </tbody>
-                </table>
-                <table
-                  className={
-                    darkTheme
-                      ? "table table-dark table-striped table-hover W-75 mx-auto shadow mb-5"
-                      : "table table-hover table-striped W-75 mx-auto shadow-sm mb-5"
-                  }
-                >
-                  <thead>
-                    <tr>
-                      <th colSpan="2" className="text-info">
-                        Currencies used in the Country
-                      </th>
-                    </tr>
-                  </thead>
-                  {/* <tbody>
-                    {country.currencies.map((currency) => (
-                      <tr key={currency?.name}>
-                        <th>Name(Symbol)</th>
-                        <td>
-                          {currency?.name}({currency?.symbol})
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody> */}
-                </table>
-                <table
-                  className={
-                    darkTheme
-                      ? "table table-dark table-striped table-hover W-75 mx-auto shadow mb-5"
-                      : "table table-hover table-striped W-75 mx-auto shadow-sm mb-5"
-                  }
-                >
-                  <thead>
-                    <tr>
-                      <th colSpan="2" className="text-info">
-                        Languages Spoken
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {/* {country.languages.map((language) => (
-                      <tr key={language.name}>
-                        <th>Name(Native Name)</th>
-                        <td>
-                          {language.name}({language.nativeName})
-                        </td>
-                      </tr>
-                    ))} */}
                   </tbody>
                 </table>
               </div>

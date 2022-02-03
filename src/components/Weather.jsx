@@ -1,25 +1,48 @@
 import React from "react";
 
 const Weather = ({ darkTheme, data }) => {
+  const weatherConditions = [
+    {
+      label: "Feels like",
+      value: `${data.main.feels_like} &#176;F`,
+    },
+    {
+      label: "Humidity",
+      value: `${data?.main?.humidity} &#176;F`,
+    },
+    {
+      label: "Pressure",
+      value: `${data?.main?.pressure} atm`,
+    },
+    {
+      label: "Temperature",
+      value: `${data?.main?.temp} &#176;F`,
+    },
+    {
+      label: "Maximum Temperature",
+      value: `${data?.main?.temp_max} &#176;F`,
+    },
+    {
+      label: "Minimum Temperature",
+      value: `${data?.main?.temp_min} &#176;F`,
+    },
+  ];
   return (
     <React.Fragment>
-      <div className="alert alert-info w-75 mx-auto alert-dismissible">
-        <button type="button" className="close" data-dismiss="alert">
-          &times;
-        </button>
+      <div className="alert alert-info mx-auto alert-dismissible">
         <strong>Note:</strong> Weather results are based on country's capital(
         {data.name})
       </div>
       <table
         className={
           darkTheme
-            ? "table table-dark table-striped table-hover w-75 mx-auto shadow mb-5"
-            : "table table-hover table-striped w-75 mx-auto shadow-sm mb-5"
+            ? "table table-dark table-hover mx-auto mb-5"
+            : "table table-hover mx-auto mb-5"
         }
       >
         <thead>
           <tr>
-            <th colSpan="2" className="text-info">
+            <th colSpan="2" className={darkTheme ? "text-light" : "text-dark"}>
               Cloud Details
             </th>
           </tr>
@@ -34,13 +57,13 @@ const Weather = ({ darkTheme, data }) => {
       <table
         className={
           darkTheme
-            ? "table table-dark table-striped table-hover w-75 mx-auto shadow mb-5"
-            : "table table-hover table-striped w-75 mx-auto shadow-sm mb-5"
+            ? "table table-dark table-hover mx-auto mb-5"
+            : "table table-hover mx-auto mb-5"
         }
       >
         <thead>
           <tr>
-            <th colSpan="2" className="text-info">
+            <th colSpan="2" className={darkTheme ? "text-light" : "text-dark"}>
               Coordinates
             </th>
           </tr>
@@ -59,54 +82,36 @@ const Weather = ({ darkTheme, data }) => {
       <table
         className={
           darkTheme
-            ? "table table-dark table-striped table-hover w-75 mx-auto shadow mb-5"
-            : "table table-hover table-striped w-75 mx-auto shadow-sm mb-5"
+            ? "table table-dark table-hover mx-auto mb-5"
+            : "table table-hover mx-auto mb-5"
         }
       >
         <thead>
           <tr>
-            <th colSpan="2" className="text-info">
+            <th colSpan="2" className={darkTheme ? "text-light" : "text-dark"}>
               Weather Conditions
             </th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th>Feels like</th>
-            <td>{data.main.feels_like} &#176;F</td>
-          </tr>
-          <tr>
-            <th>Humidity</th>
-            <td>{data.main.humidity} &#176;F</td>
-          </tr>
-          <tr>
-            <th>Pressure</th>
-            <td>{data.main.pressure} atm</td>
-          </tr>
-          <tr>
-            <th>Temperature</th>
-            <td>{data.main.temp} &#176;F</td>
-          </tr>
-          <tr>
-            <th>Maximum Temperature</th>
-            <td>{data.main.temp_max} &#176;F</td>
-          </tr>
-          <tr>
-            <th>Minimum Temperature</th>
-            <td>{data.main.temp_min} &#176;F</td>
-          </tr>
+          {weatherConditions.map((item) => (
+            <tr key={item.label}>
+              <th>{item.label}</th>
+              <td>{item.value}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
       <table
         className={
           darkTheme
-            ? "table table-dark table-striped table-hover w-75 mx-auto shadow mb-5"
-            : "table table-hover table-striped w-75 mx-auto shadow-sm mb-5"
+            ? "table table-dark table-hover mx-auto mb-5"
+            : "table table-hover mx-auto mb-5"
         }
       >
         <thead>
           <tr>
-            <th colSpan="2" className="text-info">
+            <th colSpan="2" className={darkTheme ? "text-light" : "text-dark"}>
               Winds
             </th>
           </tr>

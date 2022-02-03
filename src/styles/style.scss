@@ -1,91 +1,110 @@
+$background: rgb(10, 25, 41);
+$primaryColor: rgb(0, 30, 60);
+$secondaryColor: rgb(19, 47, 76);
+
+$lightBackground: white;
+$lightPrimaryColor: rgb(243, 246, 249);
+$lightSecondaryColor: #e7ebf0;
+
 * {
   font-family: "Poppins", sans-serif;
 }
-
 body {
-  background-color: #282c34 !important;
+  background-color: $background;
 }
 
 .bg-dark {
-  background-color: #282c34 !important;
-  td,
-  th {
-    color: rgba(255, 255, 255, 0.87) !important;
+  background-color: $background !important;
+}
+.bg-light {
+  background-color: $lightBackground !important;
+}
+//input field
+.dark-field {
+  background-color: $background !important;
+  border: 1px solid $secondaryColor;
+  &:hover {
+    background: rgba(19, 47, 76, 0.4);
+    border-color: rgb(23, 58, 94);
   }
-}
-.text-light {
-  color: rgba(255, 255, 255, 0.87) !important;
-}
-.form-control {
-  background-color: #282c3400 !important;
-  border: none !important;
-  border-bottom: 1px solid #17a2b8 !important;
   &:focus {
-    box-shadow: none !important;
-    outline: none;
+    border-color: $secondaryColor;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem $secondaryColor;
   }
+}
+
+.light-field {
+  background-color: $lightPrimaryColor !important;
+  border: 1px solid $lightSecondaryColor;
+  &:hover {
+    background: rgba(19, 47, 76, 0.4);
+    border-color: rgb(23, 58, 94);
+  }
+  &:focus {
+    border-color: $secondaryColor;
+    outline: 0;
+    box-shadow: 0 0 0 0.05rem $secondaryColor;
+  }
+}
+
+//card - dark theme
+
+.card.bg-dark {
+  background-color: $primaryColor !important;
+  border: 1px solid $secondaryColor;
+  height: 150px;
+}
+
+//card - light theme
+
+.card.bg-light {
+  background-color: $lightBackground !important;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  height: 150px;
+}
+
+.card h2 {
+  font-size: 1.2rem;
+  text-decoration: none !important;
 }
 
 .pointer {
   cursor: pointer;
 }
 
-.list-group {
-  position: relative;
-  z-index: 99;
-}
-a.card {
-  transition: all 0.2s ease-in;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+// list items
+
+.list-group-item.active {
+  border: none;
+  border-bottom: 1px solid $secondaryColor;
   &:hover {
-    text-decoration: none !important;
-    transform: scale(1.1);
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
+    background-color: $secondaryColor !important;
   }
 }
 
-.custom-control-input:checked ~ .custom-control-label::before {
-  border-color: #17a2b8 !important;
-  background-color: #17a2b8 !important;
-}
-.custom-control-input:focus ~ .custom-control-label::before {
-  box-shadow: 0 0 0 0.2rem rgba(0, 161, 179, 0.296);
-}
-body ::-webkit-scrollbar {
-  height: 5px; /*for horizonatal scrollbar*/
-  width: 5px;
+// table
+
+thead,
+table > :not(caption) > * > * {
+  border-width: 0;
 }
 
-/* Track */
-body ::-webkit-scrollbar-track {
-  background: #f1f1f100;
-}
+//table-dark
 
-/* Handle */
-body ::-webkit-scrollbar-thumb {
-  background: #17a2b8;
-  border-radius: 2.5px;
-}
-
-/* Handle on hover */
-body ::-webkit-scrollbar-thumb:hover {
-  background: #17a2b8;
-}
-
-.W-75 {
-  max-width: 75% !important;
-}
-.W-50 {
-  max-width: 50% !important;
-}
-
-@media (max-width: 717px) {
-  .W-75 {
-    max-width: 90% !important;
+.table.table-dark {
+  border: 1.3px solid $secondaryColor;
+  border-radius: 2rem !important;
+  td,
+  th {
+    background-color: $background !important;
+    border-color: $primaryColor;
   }
-  .W-50 {
-    max-width: 75% !important;
-  }
+}
+// light table
+.table.table-hover > tbody > tr:hover > * {
+  background-color: $lightSecondaryColor !important;
+}
+.table-dark.table-hover > tbody > tr:hover > * {
+  background-color: $primaryColor !important;
 }
