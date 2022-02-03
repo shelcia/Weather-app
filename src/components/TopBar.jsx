@@ -16,7 +16,7 @@ const TopBar = () => {
         }
       >
         <NavLink className="navbar-brand" to="/">
-          <h6 className="my-0"> Weather App</h6>
+          <h6 className="my-0"> Weather Ups</h6>
         </NavLink>
 
         <div className="ms-auto d-flex">
