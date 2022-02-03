@@ -1,7 +1,6 @@
 import React from "react";
 
 import { useRoutes } from "react-router-dom";
-// import { CountryProvider } from "./components/CountryContext";
 import { ThemeProvider } from "./context/ThemeContext";
 
 import TopBar from "./components/TopBar";

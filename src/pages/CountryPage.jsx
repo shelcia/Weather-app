@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext } from "react";
 import { ThemeContext } from "../context/ThemeContext";
 import Weather from "../components/Weather";
 import CountriesData from "../data/countries.json";
