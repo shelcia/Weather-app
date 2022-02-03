@@ -7,35 +7,33 @@
 [![forthebadge](https://forthebadge.com/images/badges/uses-html.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
 
 [![forthebadge](https://forthebadge.com/images/badges/powered-by-coffee.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/open-source.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/built-by-developers.svg)](https://forthebadge.com)
+
 </div>
 
+<!-- ## Want to contribute ? Join our server (NWoC'20)
 
-## Want to contribute ? Join our server (NWoC'20)
-
-[Discord Server](https://discord.gg/TkKHAYVCza)
+[Discord Server](https://discord.gg/TkKHAYVCza) -->
 
 ## Demo-
+
 ![demo1](assets/demo/demo1.png)
 ![demo2](assets/demo/demo2.png)
+![demo3](assets/demo/demo3.png)
 ![demo3](assets/demo/demo4.png)
 
 [Check out complete walkthrough of Weather app](https://vimeo.com/490218590)
 
-
 ### Resources used
 
-Rest countries API:  https://restcountries.eu/ 
+Rest countries API: https://restcountries.com/
 
 Open Weather API: https://openweathermap.org/api
 
-
 ### Deployed at
 
-https://react-weather-app-shelcia.netlify.app
+https://weatherups.netlify.app/
 
-
-### To Use this repo for development 
-
+### To Use this repo for development
 
 - Clone this repo
 
@@ -44,6 +42,3 @@ https://react-weather-app-shelcia.netlify.app
 - Then run <code>npm install</code>
 
 - And finally <code>npm start</code>
-
-
-
