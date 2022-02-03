@@ -1,27 +1,22 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import CountryPage from "./components/CountryPage";
-import HomePage from "./components/HomePage";
-import { ThemeProvider } from "./components/ThemeContext";
+
+import { useRoutes } from "react-router-dom";
 import { CountryProvider } from "./components/CountryContext";
+import { ThemeProvider } from "./context/ThemeContext";
 
 import TopBar from "./components/TopBar";
+import routes from "./routes";
 import "./styles/style.css";
-import AboutPage from "./components/AboutPage";
 
 const App = () => {
+  const allPages = useRoutes(routes);
+
   return (
     <React.Fragment>
       <ThemeProvider>
         <CountryProvider>
-          <BrowserRouter>
-            <TopBar />
-            <Switch>
-              <Route path="/" exact component={HomePage} />
-              <Route path="/about" component={AboutPage} />
-              <Route path="/:id" component={CountryPage} />
-            </Switch>
-          </BrowserRouter>
+          <TopBar />
+          {allPages}
         </CountryProvider>
       </ThemeProvider>
     </React.Fragment>

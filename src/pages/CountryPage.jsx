@@ -1,16 +1,25 @@
-import React from "react";
-import { useState } from "react";
-import { useEffect } from "react";
-import { useContext } from "react";
-import { ThemeContext } from "./ThemeContext";
-import Weather from "./Weather";
-import { CountryContext } from "./CountryContext";
+import React, { useState, useEffect, useContext } from "react";
+import { ThemeContext } from "../context/ThemeContext";
+import Weather from "../components/Weather";
+import CountriesData from "../data/countries.json";
+import { useParams } from "react-router-dom";
 
 const CountryPage = ({ match }) => {
+  const { id } = useParams();
+
+  // console.log(id);
+
+  const countries = CountriesData;
+  const country = countries.filter(
+    (item) => item.name?.common?.replace(/\s+/g, "-").toLowerCase() === id
+  );
+
+  console.log(country);
+
   const [darkTheme] = useContext(ThemeContext);
   const [loading, setLoading] = useState(true);
   const [isMessage, setIsMessage] = useState(false);
-  const [countries] = useContext(CountryContext);
+  // const [countries] = useContext(CountryContext);
   const [data, setData] = useState({
     name: "",
     clouds: { all: "" },
@@ -27,17 +36,17 @@ const CountryPage = ({ match }) => {
   });
   //   console.log(data);
 
-  const [country, setCountry] = useState([]);
+  // const [country, setCountry] = useState([]);
 
-  const capitalValue = match.params.id.replace(/-/g, " ");
+  const capitalValue = id.replace(/-/g, " ");
   var countryName = capitalValue;
-  
+
   // extracting country for the query capital
-  const checkCountryforCapital = countries.find(
-  (index) => index.capital.toLowerCase() === capitalValue.toLowerCase()
-  );
-  if(typeof checkCountryforCapital != 'undefined')
-    countryName = checkCountryforCapital.name;
+  // const checkCountryforCapital = countries.find(
+  //   (index) => index.capital.toLowerCase() === capitalValue.toLowerCase()
+  // );
+  // if (typeof checkCountryforCapital != "undefined")
+  //   countryName = checkCountryforCapital.name;
 
   const API_KEY = process.env.REACT_APP_API_KEY;
 
@@ -59,20 +68,20 @@ const CountryPage = ({ match }) => {
     }
   };
 
-  useEffect(() => {
-    const getCountryDetails = async () => {
-      try {
-        const results = await fetch(
-          `https://restcountries.eu/rest/v2/name/${countryName}?fullText=true`
-        );
-        const response = await results.json();
-        setCountry(response);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    getCountryDetails();
-  }, [countryName]);
+  // useEffect(() => {
+  //   const getCountryDetails = async () => {
+  //     try {
+  //       const results = await fetch(
+  //         `https://restcountries.eu/rest/v2/name/${countryName}?fullText=true`
+  //       );
+  //       const response = await results.json();
+  //       setCountry(response);
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   };
+  //   getCountryDetails();
+  // }, [countryName]);
 
   return (
     <React.Fragment>
@@ -87,22 +96,24 @@ const CountryPage = ({ match }) => {
           style={{ paddingTop: "15vh", height: "100vh", overflowY: "scroll" }}
         >
           {country.map((country) => (
-            <React.Fragment key={country.alpha2Code}>
+            <React.Fragment key={country.fifa}>
               <div className="text-center">
                 <img
-                  src={country.flag}
+                  src={country.flags?.png}
                   alt=""
                   className="img-fluid mb-3 shadow-sm W-50"
                 />
                 <h2
                   className={darkTheme ? "text-light mb-3" : "text-dark mb-3"}
                 >
-                  {country.name}
+                  {country.name?.common}
                 </h2>
 
                 <button
                   className="btn btn-info mb-4"
-                  onClick={(event) => getWeatherDetails(country.capital, event)}
+                  onClick={(event) =>
+                    getWeatherDetails(country.capital[0], event)
+                  }
                 >
                   Show Weather Details
                 </button>
@@ -114,7 +125,6 @@ const CountryPage = ({ match }) => {
                     <span role="img" aria-label="emoji">
                       🥺🥺🥺
                     </span>
-                    .
                   </p>
                 )}
                 {!loading && <Weather darkTheme={darkTheme} data={data} />}
@@ -154,10 +164,10 @@ const CountryPage = ({ match }) => {
                         {country.area} km <sup>2</sup>
                       </td>
                     </tr>
-                    <tr>
+                    {/* <tr>
                       <th>Native Name </th>
                       <td>{country.nativeName}</td>
-                    </tr>
+                    </tr> */}
                   </tbody>
                 </table>
                 <table
@@ -174,16 +184,16 @@ const CountryPage = ({ match }) => {
                       </th>
                     </tr>
                   </thead>
-                  <tbody>
+                  {/* <tbody>
                     {country.currencies.map((currency) => (
-                      <tr key={currency.name}>
+                      <tr key={currency?.name}>
                         <th>Name(Symbol)</th>
                         <td>
-                          {currency.name}({currency.symbol})
+                          {currency?.name}({currency?.symbol})
                         </td>
                       </tr>
                     ))}
-                  </tbody>
+                  </tbody> */}
                 </table>
                 <table
                   className={
@@ -200,14 +210,14 @@ const CountryPage = ({ match }) => {
                     </tr>
                   </thead>
                   <tbody>
-                    {country.languages.map((language) => (
+                    {/* {country.languages.map((language) => (
                       <tr key={language.name}>
                         <th>Name(Native Name)</th>
                         <td>
                           {language.name}({language.nativeName})
                         </td>
                       </tr>
-                    ))}
+                    ))} */}
                   </tbody>
                 </table>
               </div>
