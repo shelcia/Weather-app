@@ -4,11 +4,11 @@ const Weather = ({ darkTheme, data }) => {
   const weatherConditions = [
     {
       label: "Feels like",
-      value: `${data.main.feels_like} &#176;F`,
+      value: `${data.main.feels_like} °F`,
     },
     {
       label: "Humidity",
-      value: `${data?.main?.humidity} &#176;F`,
+      value: `${data?.main?.humidity} °F`,
     },
     {
       label: "Pressure",
@@ -16,15 +16,15 @@ const Weather = ({ darkTheme, data }) => {
     },
     {
       label: "Temperature",
-      value: `${data?.main?.temp} &#176;F`,
+      value: `${data?.main?.temp} °F`,
     },
     {
       label: "Maximum Temperature",
-      value: `${data?.main?.temp_max} &#176;F`,
+      value: `${data?.main?.temp_max} °F`,
     },
     {
       label: "Minimum Temperature",
-      value: `${data?.main?.temp_min} &#176;F`,
+      value: `${data?.main?.temp_min} °F`,
     },
   ];
   return (
