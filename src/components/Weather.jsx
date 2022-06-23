@@ -4,11 +4,11 @@ const Weather = ({ darkTheme, data }) => {
   const weatherConditions = [
     {
       label: "Feels like",
-      value: `${data.main.feels_like} °F`,
+      value: `${data.main.feels_like}`,
     },
     {
       label: "Humidity",
-      value: `${data?.main?.humidity} °F`,
+      value: `${data?.main?.humidity}`,
     },
     {
       label: "Pressure",
@@ -16,15 +16,15 @@ const Weather = ({ darkTheme, data }) => {
     },
     {
       label: "Temperature",
-      value: `${data?.main?.temp} °F`,
+      value: `${data?.main?.temp}`,
     },
     {
       label: "Maximum Temperature",
-      value: `${data?.main?.temp_max} °F`,
+      value: `${data?.main?.temp_max}`,
     },
     {
       label: "Minimum Temperature",
-      value: `${data?.main?.temp_min} °F`,
+      value: `${data?.main?.temp_min}`,
     },
   ];
   return (
@@ -71,11 +71,15 @@ const Weather = ({ darkTheme, data }) => {
         <tbody>
           <tr>
             <th>Longitude</th>
-            <td>{data.coord.lon}&#176;</td>
+            <td>
+              {data.coord.lon} <sup>o</sup>
+            </td>
           </tr>
           <tr>
             <th>Lattitude</th>
-            <td>{data.coord.lat} &#176;</td>
+            <td>
+              {data.coord.lat} <sup>o</sup>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -97,7 +101,13 @@ const Weather = ({ darkTheme, data }) => {
           {weatherConditions.map((item) => (
             <tr key={item.label}>
               <th>{item.label}</th>
-              <td>{item.value}</td>
+              {item.label === "Pressure" ? (
+                <td>{item.value}</td>
+              ) : (
+                <td>
+                  {item.value} <sup>o</sup>F
+                </td>
+              )}
             </tr>
           ))}
         </tbody>
@@ -119,7 +129,9 @@ const Weather = ({ darkTheme, data }) => {
         <tbody>
           <tr>
             <th>Degree</th>
-            <td>{data.wind.deg} &#176;</td>
+            <td>
+              {data.wind.deg} <sup>o</sup>
+            </td>
           </tr>
           <tr>
             <th>Speed</th>
