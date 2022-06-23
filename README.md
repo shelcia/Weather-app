@@ -33,11 +33,13 @@ Open Weather API: https://openweathermap.org/api
 
 https://weatherups.netlify.app/
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/648bb001-da04-4000-a523-2fbd2aacc7c9/deploy-status)](https://app.netlify.com/sites/weatherups/deploys)
+
 ### To Use this repo for development
 
 - Clone this repo
 
-- Add .env file and create a variable name REACT_WEATHER_API_KEY and add your api key (check open weather api docs)
+- Add .env file and create a variable name REACT_APP_API_KEY and add your api key (check open weather api docs)
 
 - Then run <code>npm install</code>
 
